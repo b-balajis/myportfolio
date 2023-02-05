@@ -1,13 +1,23 @@
 import * as React from "react";
-import Wip from "./wip.jpg";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
-        <h1 className="text-center text-2xl">This is Balaji's Portfolio</h1>
-        <img src={Wip} alt="Under maintenance"/>
+    <>
+      <div className="">
+        <Navbar />
+        <Home />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
       </div>
-    
+    </>
   );
 }
 
