@@ -13,17 +13,17 @@ const About = () => {
     {
       title: "SSC",
       desc: "SSVN High School, Chirala",
-      time: "2016-17",
+      time: "2016-2017",
     },
     {
       title: "Intermediate",
       desc: "Sri Gowthami Junior College, Chirala",
-      time: "2017-19",
+      time: "2017-2019",
     },
     {
       title: "Bachelor of Technology (B.Tech)",
       desc: "GMR Institute of Technology, Rajam",
-      time: "2019-23",
+      time: "2019-2023",
     },
     {
       title: "Software Engineer Trainee",
@@ -37,7 +37,7 @@ const About = () => {
     <>
       <div className="mx-auto lg:max-w-7xl h-auto">
         <p className="text-center text-5xl font-bold">About</p>
-        <div>
+        <div className="mt-[5vh]">
           <Timeline position="alternate">
             {about.map((timeline, index) => (
               <TimelineItem >

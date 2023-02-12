@@ -10,12 +10,12 @@ const Home = () => {
     >
       <div className="h-[40vh]">
         <CodeIcon style={{ fontSize: 45 }} className="text-blue-600" />
-        <div className="my-10 space-y-4">
+        <div className="my-10 space-y-4 ml-5">
           <h4>HELLO</h4>
           <h1 className="text-5xl font-bold">
             I am <span>Balaji</span>
           </h1>
-          <h2 className="text-4xl font-bold">Web Developer</h2>
+          <h2 className="text-4xl font-bold">Full Stack Developer</h2>
           <p className="text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             quod.
