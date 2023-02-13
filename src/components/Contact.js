@@ -7,7 +7,7 @@ import CallIcon from "@mui/icons-material/Call";
 
 const Contact = () => {
   return (
-    <div className="mx-auto lg:max-w-7xl mb-[10vh]">
+    <div className="mx-auto lg:max-w-7xl mb-[5vh]">
       <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
       <div className="md:flex md:space-x-4 mt-[5vh]">
         <div className=" md:w-1/2 flex flex-col gap-y-4  w-full">
