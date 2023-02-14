@@ -26,6 +26,11 @@ const About = () => {
       time: "2019-2023",
     },
     {
+      title: "3604 Global rank in Codevita",
+      desc: "TCS Codevita Season 10",
+      time: "2022"
+    },
+    {
       title: "Software Engineer Trainee",
       desc: "Revidd, Visakhapatnam ",
       time: "June 2022 - present",

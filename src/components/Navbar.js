@@ -4,9 +4,24 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
+import Resume from "../assets/doc/Bheemavarapu_Balaji.pdf"
 
 const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
+
+  const handleResumeDownload = () => {
+    fetch(Resume).then(response => {
+      response.blob().then(blob => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          // Setting various property values
+          let alink = document.createElement('a');
+          alink.href = fileURL;
+          alink.download = 'Balaji_Resume.pdf';
+          alink.click();
+      })
+  })
+  }
 
   return (
     <nav className="w-full shadow sticky">
@@ -53,7 +68,7 @@ const NavBar = () => {
                 </ul>
               </div>
               <div className="md:ml-12 md:mt-0 mt-4">
-                <Button variant="contained" size="medium" fullWidth>
+                <Button variant="contained" size="medium" fullWidth onClick={handleResumeDownload}>
                   Download Resume
                 </Button>
               </div>
