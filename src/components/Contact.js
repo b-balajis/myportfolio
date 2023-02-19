@@ -71,7 +71,7 @@ const Contact = () => {
               size="large"
               type="submit"
             >
-              Outlined
+              Submit
             </Button>
           </div>
         </Box>
