@@ -6,7 +6,8 @@ import Balaji from "../assets/img/balaji.png";
 
 const Home = () => {
   return (
-    <div
+    <section id="home">
+      <div
       className="flex flex-col justify-center place-items-center mx-auto v-screen lg:flex-row lg:justify-around lg:max-w-7xl md:mt-[10vh]
       "
     >
@@ -22,7 +23,9 @@ const Home = () => {
             I am a Full Stack Developer. I have been working on web development.
             I am very passionate about my work.
           </p>
-          <Button variant="contained">Contact Me</Button>
+          <div>
+          <a href="#contact"><Button variant="contained">Let`s Talk</Button></a>
+          </div>
         </div>
         <VscCode style={{ fontSize: 45 }} className="text-blue-600 font-bold" />
       </div>
@@ -35,6 +38,7 @@ const Home = () => {
         />
       </div>
     </div>
+    </section>
   );
 };
 

@@ -49,28 +49,28 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-blue-600 py-[1vh]">
-      <div className="text-center mx-auto lg:max-w-7xl">
-        <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
-        <div className="flex space-x-5 justify-center my-[2vh]">
-          {socialMedia.map((app) => (
-            <a href={app.link} target="_blank" rel="noreferrer">
-              {/* <div
-                className="bg-white rounded-full p-[.5vh]"
-                style={{
-                  color: `${app.color}`,
-                }}
-              > */}
-                <img src={app.icon} alt={app.name} width={36} />
-              {/* </div> */}
-            </a>
-          ))}
-        </div>
-        <p className="text-white">
-          <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
-        </p>
+    <section id="footer"><div className="bg-blue-600 py-[1vh]">
+    <div className="text-center mx-auto lg:max-w-7xl">
+      <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
+      <div className="flex space-x-5 justify-center my-[2vh]">
+        {socialMedia.map((app) => (
+          <a href={app.link} target="_blank" rel="noreferrer">
+            <div
+              className="bg-white rounded-full p-[.5vh]"
+              style={{
+                color: `${app.color}`,
+              }}
+            >
+              <img src={app.icon} alt={app.name} width={32} />
+            </div>
+          </a>
+        ))}
       </div>
+      <p className="text-white mb-2">
+        <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
+      </p>
     </div>
+  </div></section>
   );
 };
 

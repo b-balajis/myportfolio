@@ -2,9 +2,9 @@ import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "../assets/icons/mail.svg";
+import LocationOnIcon from "../assets/icons/location.svg";
+import CallIcon from "../assets/icons/call.svg";
 
 const Contact = () => {
   const handleContactFormSubmit = (event) => {
@@ -17,7 +17,8 @@ const Contact = () => {
     console.log(name, email, subject, msg);
   };
   return (
-    <div className="mx-auto lg:max-w-7xl mb-[5vh]">
+    <section id="contact">
+      <div className="mx-auto lg:max-w-7xl mb-[5vh]">
       <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
       <div className="md:flex md:space-x-4 mt-[5vh]">
         <Box
@@ -78,21 +79,21 @@ const Contact = () => {
         <div className="md:w-1/2 border border-black  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0">
           <p className="text-center text-3xl font-bold my-4">Contact Details</p>
           <div className="ml-[8vh] space-y-8">
-            <p>
+            <p className="flex place-items-center">
               <span className="mr-4">
-                <EmailIcon />
+                <img src={EmailIcon} alt="email" width={32}/>
               </span>
               balajibheemavarapu@gmail.com
             </p>
-            <p>
+            <p className="flex place-items-center">
               <span className="mr-4">
-                <CallIcon />
+              <img src={CallIcon} alt="email" width={32}/>
               </span>
               +91 80080 75376
             </p>
-            <p>
+            <p className="flex place-items-center">
               <span className="mr-4">
-                <LocationOnIcon />
+              <img src={LocationOnIcon} alt="email" width={32}/>
               </span>
               Chirala, Andhra Pradesh, India.
             </p>
@@ -100,6 +101,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

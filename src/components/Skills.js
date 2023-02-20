@@ -1,6 +1,18 @@
 import React from "react";
 import Developer from "../assets/img/developer.jpg";
 import Python from "../assets/icons/python.svg";
+import Java from "../assets/icons/java.svg";
+import JavaScript from "../assets/icons/javascript.svg";
+import C from "../assets/icons/c.svg";
+import ReactJS from "../assets/icons/react.svg";
+import TailwindCSS from "../assets/icons/tailwind-css.svg";
+import MUI from "../assets/img/mui.png"
+import Bootstrap from "../assets/icons/bootstrap.svg";
+import PHP from "../assets/icons/php.svg";
+import Flask from "../assets/icons/flask.svg";
+import Git from "../assets/icons/git.svg";
+import Heroku from "../assets/icons/heroku.svg";
+import Firebase from "../assets/icons/firebase.svg";
 
 const Skills = () => {
   const languages = [
@@ -10,58 +22,59 @@ const Skills = () => {
     },
     {
       name: "Java",
-      icon: "",
+      icon: Java,
     },
     {
       name: "JavaScript",
-      icon: "",
+      icon: JavaScript,
     },
     {
-      name: "C",
-      icon: "",
+      name: "C Programming",
+      icon: C,
     },
   ];
   //ReactJS, Tailwind CSS, Material UI, Bootstrap, PHP, Flask, Git, Heroku, Firebase Hosting
   const tools = [
     {
       name: "ReactJS",
-      icon: "",
+      icon: ReactJS,
     },
     {
       name: "Tailwind CSS",
-      icon: "",
+      icon: TailwindCSS,
     },
     {
       name: "Material UI",
-      icon: "",
+      icon: MUI,
     },
     {
       name: "Bootstrap",
-      icon: "",
+      icon: Bootstrap,
     },
     {
       name: "PHP",
-      icon: "",
+      icon: PHP,
     },
     {
       name: "Flask",
-      icon: "",
+      icon: Flask,
     },
     {
       name: "Git",
-      icon: "",
+      icon: Git,
     },
     {
       name: "Heroku",
-      icon: "",
+      icon: Heroku,
     },
     {
       name: "Firebase",
-      icon: "",
+      icon: Firebase,
     },
   ];
   return (
-    <div className="lg:max-w-7xl mx-auto mt-[8vh]">
+    <section id="skills">
+      <div className="lg:max-w-7xl mx-auto mt-[8vh]">
       <h1 className="text-5xl font-bold text-center">Skills</h1>
       <div className="md:flex lg:justify-between">
         <div>
@@ -70,20 +83,20 @@ const Skills = () => {
             {languages.map((language, index) => {
               return (
                 <div className="flex gap-x-3">
-                  <img src={language.icon} alt={language.name} width={36} />
+                  <img src={language.icon} alt={language.name} width={32} />
                   <p className="text-2xl">{language.name}</p>
                 </div>
               );
             })}
           </div>
-          <p className="text-3xl font-bold mt-[3vh]">Languages</p>
-          <div className="grid grid-cols-3 mt-[2vh] gap-4">
+          <p className="text-3xl font-bold mt-[3vh]">Tools & Technologies</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-6">
             {tools.map((tool, index) => {
               return (
-                <>
+                <div className="flex gap-x-3">
+                  <img src={tool.icon} alt={tool.name} width={32}/>
                   <p className="text-2xl">{tool.name}</p>
-                  <img src={tool.icon} alt={tool.name} />
-                </>
+                </div>
               );
             })}
           </div>
@@ -93,6 +106,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

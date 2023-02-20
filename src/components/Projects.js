@@ -44,8 +44,8 @@ const Projects = () => {
     Navigate(link);
   };
   return (
-    <>
-      <div className="lg:max-w-7xl mx-auto">
+    <section id="projects">
+       <div className="lg:max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold text-center">Projects</h1>
         <div className="md:flex flex-wrap mt-[5vh] justify-center lg:justify-start lg:px-[1vw] gap-x-5 gap-y-8">
           {Projects.map((project, index) => {
@@ -74,7 +74,7 @@ const Projects = () => {
           })}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -26,9 +26,14 @@ const About = () => {
       time: "2019-2023",
     },
     {
+      title: "Vice Chair of ACM GMRIT",
+      desc: "ACM is Student Chapter",
+      time: "2022-2023",
+    },
+    {
       title: "3604 Global rank in Codevita",
       desc: "TCS Codevita Season 10",
-      time: "2022"
+      time: "2022",
     },
     {
       title: "Software Engineer Trainee",
@@ -39,21 +44,21 @@ const About = () => {
 
   const about = aboutTimeline.reverse();
   return (
-    <>
+    <section id="about">
       <div className="mx-auto lg:max-w-7xl h-auto">
         <p className="text-center text-5xl font-bold">About</p>
         <div className="mt-[5vh]">
           <Timeline position="alternate">
             {about.map((timeline, index) => (
-              <TimelineItem >
+              <TimelineItem>
                 <TimelineOppositeContent color="text.primary">
-                  <p >{timeline.time}</p>
+                  <p className="mt-1">{timeline.time}</p>
                 </TimelineOppositeContent>
                 <TimelineSeparator
                   sx={{
                     minHeight: 100,
-                    marginTop: 1,
-                    marginBottom: 1,
+                    marginTop: 0.5,
+                    marginBottom: 0.5,
                   }}
                 >
                   {index % 2 === 0 ? (
@@ -64,7 +69,7 @@ const About = () => {
                   {about.length - 1 === index ? null : <TimelineConnector />}
                 </TimelineSeparator>
                 <TimelineContent>
-                  <p className="text-base font-bold md:text-2xl ">
+                  <p className="text-base font-bold md:text-2xl">
                     {timeline.title}
                   </p>
                   <Typography>
@@ -76,7 +81,7 @@ const About = () => {
           </Timeline>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

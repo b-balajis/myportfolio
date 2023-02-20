@@ -25,11 +25,11 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="w-full shadow sticky">
+    <nav className="w-full shadow sticky top-0 z-50 bg-slate-50">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-2">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
+            <a href="/">
             <h2 className="text-2xl font-bold">Balaji </h2>
               {/* <img src={BalajiLogo} alt="Logo" className="w-[15vh]" /> */}
             </a>
@@ -53,19 +53,19 @@ const NavBar = () => {
               <div>
                 <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                   <li className="text-gray-600 hover:text-blue-600">
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="#home">Home</a>
                   </li>
                   <li className="text-gray-600 hover:text-blue-600">
-                    <a href="javascript:void(0)">About</a>
+                    <a href="#about">About</a>
                   </li>
                   <li className="text-gray-600 hover:text-blue-600">
-                    <a href="javascript:void(0)">Skills</a>
+                    <a href="#skills">Skills</a>
                   </li>
                   <li className="text-gray-600 hover:text-blue-600">
-                    <a href="javascript:void(0)">Projects</a>
+                    <a href="#projects">Projects</a>
                   </li>
                   <li className="text-gray-600 hover:text-blue-600">
-                    <a href="javascript:void(0)">Contact</a>
+                    <a href="#contact">Contact</a>
                   </li>
                 </ul>
               </div>
