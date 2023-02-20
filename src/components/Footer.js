@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -6,6 +6,15 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Footer = () => {
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYear(new Date().getFullYear());
+    }, 1000 * 60 * 60 * 24 * 365);
+
+    return () => clearInterval(interval);
+  }, [])
   const socialMedia = [
     {
       name: "LinkedIn",
@@ -53,7 +62,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="text-white">© 2023 Balaji Bheemavarapu</p>
+        <p className="text-white">© {year} Balaji Bheemavarapu</p>
       </div>
     </div>
   );
