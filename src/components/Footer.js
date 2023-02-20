@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
+import GitHubIcon from "../assets/icons/github.svg";
+import InstagramIcon from "../assets/icons/instagram.svg";
+import FacebookIcon from "../assets/icons/fb.svg";
+import TwitterIcon from "../assets/icons/twitter.svg";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -14,37 +14,37 @@ const Footer = () => {
     }, 1000 * 60 * 60 * 24 * 365);
 
     return () => clearInterval(interval);
-  }, [])
+  }, []);
   const socialMedia = [
     {
       name: "LinkedIn",
-      icon: <LinkedInIcon />,
+      icon: LinkedInIcon,
       link: "https://www.linkedin.com/in/b-balajis/",
-      color: "blue"
+      color: "blue",
     },
     {
       name: "GitHub",
-      icon: <GitHubIcon />,
+      icon: GitHubIcon,
       link: "https://github.com/b-balajis",
-      color: "black"
+      color: "black",
     },
     {
       name: "Instagram",
-      icon: <InstagramIcon />,
+      icon: InstagramIcon,
       link: "https://www.instagram.com/balaji._.b/",
-      color: "red"
+      color: "red",
     },
     {
       name: "Facebook",
-      icon: <FacebookIcon />,
+      icon: FacebookIcon,
       link: "https://www.facebook.com/BBalajis/",
-      color: "blue"
+      color: "blue",
     },
     {
       name: "Twitter",
-      icon: <TwitterIcon />,
+      icon: TwitterIcon,
       link: "https://twitter.com/B_Balajis",
-        color: "blue"
+      color: "blue",
     },
   ];
 
@@ -55,14 +55,20 @@ const Footer = () => {
         <div className="flex space-x-5 justify-center my-[2vh]">
           {socialMedia.map((app) => (
             <a href={app.link} target="_blank" rel="noreferrer">
-              <div className="bg-white rounded-full p-[1vh]" style={{
-                color: `${app.color}`
-              }
-              }>{app.icon}</div>
+              {/* <div
+                className="bg-white rounded-full p-[.5vh]"
+                style={{
+                  color: `${app.color}`,
+                }}
+              > */}
+                <img src={app.icon} alt={app.name} width={36} />
+              {/* </div> */}
             </a>
           ))}
         </div>
-        <p className="text-white"><span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu</p>
+        <p className="text-white">
+          <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
+        </p>
       </div>
     </div>
   );
