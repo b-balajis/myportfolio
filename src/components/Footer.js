@@ -62,7 +62,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="text-white">© {year} Balaji Bheemavarapu</p>
+        <p className="text-white"><span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu</p>
       </div>
     </div>
   );
