@@ -34,13 +34,13 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(formData);
-    // axios.post('/process-form', formData)
-    //   .then(res => {
-    //     alert('Form submitted successfully!');
-    //   })
-    //   .catch(err => {
-    //     alert('Error submitting form. Please try later.');
-    //   });
+    axios.post('/process-form', formData)
+      .then(res => {
+        alert('Form submitted successfully!');
+      })
+      .catch(err => {
+        alert('Error submitting form. Please try later.');
+      });
   };
 
   return (
