@@ -79,30 +79,30 @@ const Skills = () => {
       <div className="md:flex lg:justify-between">
         <div>
           <p className="text-3xl font-bold">Languages</p>
-          <div className="grid grid-cols-2 mt-[2vh] gap-4">
+          <div className="grid grid-cols-2 mt-[2vh] gap-x-9 gap-y-6">
             {languages.map((language, index) => {
               return (
                 <div className="flex gap-x-3">
-                  <img src={language.icon} alt={language.name} width={32} />
-                  <p className="text-2xl">{language.name}</p>
+                  <img src={language.icon} alt={language.name} width={24} />
+                  <p className="text-xl">{language.name}</p>
                 </div>
               );
             })}
           </div>
-          <p className="text-3xl font-bold mt-[3vh]">Tools & Technologies</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-6">
+          <p className="text-3xl font-bold mt-[5vh]">Tools & Technologies</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-x-9 gap-y-6">
             {tools.map((tool, index) => {
               return (
                 <div className="flex gap-x-3">
-                  <img src={tool.icon} alt={tool.name} width={32}/>
-                  <p className="text-2xl">{tool.name}</p>
+                  <img src={tool.icon} alt={tool.name} width={24}/>
+                  <p className="text-xl">{tool.name}</p>
                 </div>
               );
             })}
           </div>
         </div>
         <div>
-          <img src={Developer} alt="Skills" width={500} />
+          <img src={Developer} alt="Skills" width={540} />
         </div>
       </div>
     </div>
