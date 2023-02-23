@@ -4,6 +4,7 @@ import GitHubIcon from "../assets/icons/github.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
 import FacebookIcon from "../assets/icons/fb.svg";
 import TwitterIcon from "../assets/icons/twitter.svg";
+import { Rotate } from "react-reveal";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -49,28 +50,32 @@ const Footer = () => {
   ];
 
   return (
-    <section id="footer"><div className="bg-blue-600 py-[1vh]">
-    <div className="text-center mx-auto lg:max-w-7xl">
-      <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
-      <div className="flex space-x-5 justify-center my-[2vh]">
-        {socialMedia.map((app) => (
-          <a href={app.link} target="_blank" rel="noreferrer">
-            <div
-              className="bg-white rounded-full p-[.5vh]"
-              style={{
-                color: `${app.color}`,
-              }}
-            >
-              <img src={app.icon} alt={app.name} width={32} />
-            </div>
-          </a>
-        ))}
+    <section id="footer">
+      <div className="bg-blue-600 py-[1vh]">
+        <div className="text-center mx-auto lg:max-w-7xl">
+          <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
+          <div className="flex space-x-5 justify-center my-[2vh]">
+            <Rotate bottom left>
+              {socialMedia.map((app) => (
+                <a href={app.link} target="_blank" rel="noreferrer">
+                  <div
+                    className="bg-white rounded-full p-[.5vh]"
+                    style={{
+                      color: `${app.color}`,
+                    }}
+                  >
+                    <img src={app.icon} alt={app.name} width={32} />
+                  </div>
+                </a>
+              ))}
+            </Rotate>
+          </div>
+          <p className="text-white mb-2">
+            <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
+          </p>
+        </div>
       </div>
-      <p className="text-white mb-2">
-        <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
-      </p>
-    </div>
-  </div></section>
+    </section>
   );
 };
 

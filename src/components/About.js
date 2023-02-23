@@ -7,6 +7,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import { Typography } from "@mui/material";
+import Slide from "react-reveal/Slide";
 
 const About = () => {
   const aboutTimeline = [
@@ -52,7 +53,9 @@ const About = () => {
             {about.map((timeline, index) => (
               <TimelineItem>
                 <TimelineOppositeContent color="text.primary">
-                  <p className="mt-1">{timeline.time}</p>
+                  <Slide top>
+                    <p className="mt-1">{timeline.time}</p>
+                  </Slide>
                 </TimelineOppositeContent>
                 <TimelineSeparator
                   sx={{
@@ -69,11 +72,15 @@ const About = () => {
                   {about.length - 1 === index ? null : <TimelineConnector />}
                 </TimelineSeparator>
                 <TimelineContent>
-                  <p className="text-base font-bold md:text-2xl">
-                    {timeline.title}
-                  </p>
+                  <Slide top>
+                    <p className="text-base font-bold md:text-2xl">
+                      {timeline.title}
+                    </p>
+                  </Slide>
                   <Typography>
-                    <p className="text-sm md:text-lg">{timeline.desc}</p>
+                    <Slide bottom>
+                      <p className="text-sm md:text-lg">{timeline.desc}</p>
+                    </Slide>
                   </Typography>
                 </TimelineContent>
               </TimelineItem>

@@ -70,7 +70,7 @@ const NavBar = () => {
                 </ul>
               </div>
               <div className="md:ml-12 md:mt-0 mt-4">
-                <Button variant="contained" size="medium" fullWidth onClick={handleResumeDownload}>
+                <Button variant="contained" size="medium" fullWidth onClick={handleResumeDownload} className="ease-in-out duration-300 ...">
                   Download Resume
                 </Button>
               </div>

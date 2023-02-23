@@ -6,13 +6,14 @@ import JavaScript from "../assets/icons/javascript.svg";
 import C from "../assets/icons/c.svg";
 import ReactJS from "../assets/icons/react.svg";
 import TailwindCSS from "../assets/icons/tailwind-css.svg";
-import MUI from "../assets/img/mui.png"
+import MUI from "../assets/img/mui.png";
 import Bootstrap from "../assets/icons/bootstrap.svg";
 import PHP from "../assets/icons/php.svg";
 import Flask from "../assets/icons/flask.svg";
 import Git from "../assets/icons/git.svg";
 import Heroku from "../assets/icons/heroku.svg";
 import Firebase from "../assets/icons/firebase.svg";
+import { Bounce, LightSpeed, Zoom } from "react-reveal";
 
 const Skills = () => {
   const languages = [
@@ -75,37 +76,43 @@ const Skills = () => {
   return (
     <section id="skills">
       <div className="lg:max-w-7xl mx-auto mt-[8vh]">
-      <h1 className="text-5xl font-bold text-center">Skills</h1>
-      <div className="md:flex lg:justify-between">
-        <div>
-          <p className="text-3xl font-bold">Languages</p>
-          <div className="grid grid-cols-2 mt-[2vh] gap-x-9 gap-y-6">
-            {languages.map((language, index) => {
-              return (
-                <div className="flex gap-x-3">
-                  <img src={language.icon} alt={language.name} width={24} />
-                  <p className="text-xl">{language.name}</p>
-                </div>
-              );
-            })}
+        <h1 className="text-5xl font-bold text-center">Skills</h1>
+        <div className="md:flex lg:justify-between">
+          <div>
+            <p className="text-3xl font-bold">Languages</p>
+            <div className="grid grid-cols-2 mt-[2vh] gap-x-9 gap-y-6">
+              {languages.map((language, index) => {
+                return (
+                  <Bounce right>
+                    <div className="flex gap-x-3">
+                      <img src={language.icon} alt={language.name} width={24} />
+                      <p className="text-xl">{language.name}</p>
+                    </div>
+                  </Bounce>
+                );
+              })}
+            </div>
+            <p className="text-3xl font-bold mt-[5vh]">Tools & Technologies</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-x-9 gap-y-6">
+              {tools.map((tool, index) => {
+                return (
+                  <LightSpeed left>
+                    <div className="flex gap-x-3">
+                      <img src={tool.icon} alt={tool.name} width={24} />
+                      <p className="text-xl">{tool.name}</p>
+                    </div>
+                  </LightSpeed>
+                );
+              })}
+            </div>
           </div>
-          <p className="text-3xl font-bold mt-[5vh]">Tools & Technologies</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-x-9 gap-y-6">
-            {tools.map((tool, index) => {
-              return (
-                <div className="flex gap-x-3">
-                  <img src={tool.icon} alt={tool.name} width={24}/>
-                  <p className="text-xl">{tool.name}</p>
-                </div>
-              );
-            })}
+          <div>
+            <Zoom>
+              <img src={Developer} alt="Skills" width={540} />
+            </Zoom>
           </div>
-        </div>
-        <div>
-          <img src={Developer} alt="Skills" width={540} />
         </div>
       </div>
-    </div>
     </section>
   );
 };
