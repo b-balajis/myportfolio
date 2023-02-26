@@ -20,15 +20,15 @@ const Home = () => {
             <h1 className="text-6xl font-bold">
               I am <span>Balaji</span>
             </h1>
-            <h2 className="text-4xl font-bold">Full Stack Developer</h2>
+            <h2 className="text-4xl font-bold">Web Developer</h2>
             <p className="w-2/3">
-              I am a Full Stack Developer. I have been working on web
+              I am a Web Developer. I have been working on web
               development. I am very passionate about my work.
             </p>
-            <div>
+            <div className="w-40">
               <a href="#contact">
                 <RubberBand>
-                  <Button variant="contained">Let`s Talk</Button>
+                  <Button variant="contained" className="w-40">Let`s Talk</Button>
                 </RubberBand>
               </a>
             </div>

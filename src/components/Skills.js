@@ -13,7 +13,7 @@ import Flask from "../assets/icons/flask.svg";
 import Git from "../assets/icons/git.svg";
 import Heroku from "../assets/icons/heroku.svg";
 import Firebase from "../assets/icons/firebase.svg";
-import { Bounce, LightSpeed, Zoom } from "react-reveal";
+import { Bounce, LightSpeed } from "react-reveal";
 
 const Skills = () => {
   const languages = [
@@ -107,9 +107,9 @@ const Skills = () => {
             </div>
           </div>
           <div>
-            <Zoom>
+            <Bounce bottom>
               <img src={Developer} alt="Skills" width={540} />
-            </Zoom>
+            </Bounce>
           </div>
         </div>
       </div>
