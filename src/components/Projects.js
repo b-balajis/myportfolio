@@ -53,14 +53,14 @@ const Projects = () => {
     <section id="projects">
       <div className="mx-auto lg:max-w-7xl h-auto justify-center">
         <h1 className="text-5xl font-bold text-center">Projects</h1>
-        <div className="md:grid grid-cols-3 mt-[5vh] justify-center lg:px-[1vw] gap-x-12 gap-y-8">
+        <div className="md:grid md:grid-cols-2 xl:grid-cols-3 mt-[5vh] lg:px-[1vw] gap-x-8 gap-y-8">
           {Projects.map((project, index) => {
             return (
               <>
                 <Zoom  duration={3000}>
                   <div
                     key={index}
-                    className="relative mt-[5vh] md:mt-0 "
+                    className="relative mt-[5vh] md:mt-0 flex justify-center v-screen"
                     onMouseEnter={() => setLaunch(true)}
                     onMouseLeave={() => setLaunch(false)}
                   >

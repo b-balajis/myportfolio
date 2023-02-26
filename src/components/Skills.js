@@ -76,8 +76,8 @@ const Skills = () => {
   return (
     <section id="skills">
       <div className="lg:max-w-7xl mx-auto mt-[8vh]">
-        <h1 className="text-5xl font-bold text-center">Skills</h1>
-        <div className="md:flex lg:justify-between">
+        <h1 className="text-5xl font-bold text-center mb-[5vw]">Skills</h1>
+        <div className="md:flex lg:justify-between px-[5vw] md:px-0">
           <div>
             <p className="text-3xl font-bold">Languages</p>
             <div className="grid grid-cols-2 mt-[2vh] gap-x-9 gap-y-6">

@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <div className="mx-auto lg:max-w-7xl mb-[5vh]">
+      <div className="mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-0">
         <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
         <div className="md:flex md:space-x-4 mt-[5vh]">
           <Box
@@ -124,7 +124,7 @@ const Contact = () => {
               <p className="text-center text-3xl font-bold my-4">
                 Contact Details
               </p>
-              <div className="ml-[8vh] space-y-8 mb-4">
+              <div className="ml-[4vh] md:ml-[8vh] space-y-8 mb-4">
                 <p className="flex place-items-center">
                   <span className="mr-4">
                     <img src={EmailIcon} alt="email" width={32} />
