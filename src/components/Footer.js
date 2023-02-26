@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="text-center mx-auto lg:max-w-7xl">
           <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
           <div className="flex space-x-5 justify-center my-[2vh]">
-            <Rotate bottom left>
+            <Rotate bottom left duration={3000}>
               {socialMedia.map((app) => (
                 <a href={app.link} target="_blank" rel="noreferrer">
                   <div

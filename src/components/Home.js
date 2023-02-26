@@ -1,10 +1,9 @@
 import React from "react";
 import CodeIcon from "@mui/icons-material/Code";
-import { VscCode } from "react-icons/vsc";
 import Button from "@mui/material/Button";
 import Balaji from "../assets/img/balaji.png";
-import Slide from "react-reveal/Slide";
 import RubberBand from "react-reveal/RubberBand";
+import { Zoom } from "react-reveal";
 
 const Home = () => {
   return (
@@ -22,31 +21,29 @@ const Home = () => {
             </h1>
             <h2 className="text-4xl font-bold">Web Developer</h2>
             <p className="w-2/3">
-              I am a Web Developer. I have been working on web
-              development. I am very passionate about my work.
+              I am a Web Developer. I have been working on web development. I am
+              very passionate about my work.
             </p>
             <div className="w-40">
               <a href="#contact">
                 <RubberBand>
-                  <Button variant="contained" className="w-40">Let`s Talk</Button>
+                  <Button variant="contained" className="w-40">
+                    Let`s Talk
+                  </Button>
                 </RubberBand>
               </a>
             </div>
           </div>
-          <VscCode
-            style={{ fontSize: 45 }}
-            className="text-blue-600 font-bold"
-          />
         </div>
         <div className="md:mt-0 bg-blue-400 rounded-full">
-          <Slide right>
+          <Zoom>
             <img
               src={Balaji}
               alt="ok"
               width={400}
               className="rounded-full p-[1vh]"
             />
-          </Slide>
+          </Zoom>
         </div>
       </div>
     </section>

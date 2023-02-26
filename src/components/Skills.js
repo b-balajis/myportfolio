@@ -83,7 +83,7 @@ const Skills = () => {
             <div className="grid grid-cols-2 mt-[2vh] gap-x-9 gap-y-6">
               {languages.map((language, index) => {
                 return (
-                  <Bounce right>
+                  <Bounce right duration={1000}>
                     <div className="flex gap-x-3">
                       <img src={language.icon} alt={language.name} width={24} />
                       <p className="text-xl">{language.name}</p>
@@ -96,7 +96,7 @@ const Skills = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 mt-[2vh] gap-x-9 gap-y-6">
               {tools.map((tool, index) => {
                 return (
-                  <LightSpeed left>
+                  <LightSpeed left duration={1000}>
                     <div className="flex gap-x-3">
                       <img src={tool.icon} alt={tool.name} width={24} />
                       <p className="text-xl">{tool.name}</p>

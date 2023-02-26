@@ -57,7 +57,7 @@ const Projects = () => {
           {Projects.map((project, index) => {
             return (
               <>
-                <Zoom>
+                <Zoom  duration={3000}>
                   <div
                     key={index}
                     className="relative mt-[5vh] md:mt-0 "

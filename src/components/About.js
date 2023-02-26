@@ -53,7 +53,7 @@ const About = () => {
             {about.map((timeline, index) => (
               <TimelineItem>
                 <TimelineOppositeContent color="text.primary">
-                  <Slide top>
+                  <Slide top duration={3000}>
                     <p className="mt-1">{timeline.time}</p>
                   </Slide>
                 </TimelineOppositeContent>
