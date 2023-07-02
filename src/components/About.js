@@ -1,12 +1,12 @@
-import * as React from "react";
 import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import { Typography } from "@mui/material";
+import * as React from "react";
 import Slide from "react-reveal/Slide";
 
 const About = () => {
@@ -39,14 +39,19 @@ const About = () => {
     {
       title: "Software Engineer Trainee",
       desc: "Revidd, Visakhapatnam ",
-      time: "June 2022 - present",
+      time: "June 2022 - May 2023",
     },
+    {
+      title: "Systems Engineer",
+      desc: "Tata Consultancy Services (TCS), Ahmedabad",
+      time: "June 2023 - Present"
+    }
   ];
 
   const about = aboutTimeline.reverse();
   return (
     <section id="about">
-      <div className="mx-auto lg:max-w-7xl h-auto">
+      <div className="mx-auto lg:max-w-7xl h-auto font-serif">
         <p className="text-center text-5xl font-bold">About</p>
         <div className="mt-[5vh]">
           <Timeline position="alternate">

@@ -1,10 +1,10 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import Resume from "../assets/doc/Bheemavarapu_Balaji.pdf"
+import { useState } from "react";
+import Resume from "../assets/doc/Bheemavarapu_Balaji.pdf";
 // import BalajiLogo from "../assets/img/logo.png"
 
 const NavBar = () => {
@@ -30,7 +30,7 @@ const NavBar = () => {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
-            <h2 className="text-2xl font-bold">Balaji </h2>
+            <h2 className="text-3xl font-bold font-serif">Balaji </h2>
               {/* <img src={BalajiLogo} alt="Logo" className="w-[15vh]" /> */}
             </a>
             <div className="md:hidden">

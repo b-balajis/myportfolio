@@ -1,9 +1,11 @@
 import { React, useState } from "react";
 import Card from "react-animated-3d-card";
-import Image from "../assets/img/1.png";
 import { Zoom } from "react-reveal";
 import Launch from "../assets/icons/launch.svg";
+import Image from "../assets/img/1.png";
+import APE from "../assets/img/ape.png";
 import OnlineFood from "../assets/img/online.png";
+import PhoneBook from "../assets/img/phonebook.png";
 
 const Projects = () => {
   const [launch, setLaunch] = useState(false);
@@ -14,14 +16,14 @@ const Projects = () => {
       desc: "Students can test in this platform and based on code, marks will be generated and shared to respective Faculty",
       link: "https://apecode.bbalajis.com/",
       linkName: "apecode.bbalajis.com",
-      img: Image,
+      img: APE,
     },
     {
       title: "Online PhoneBook",
       desc: "User can save contacts here. And can login from any devices without syncing data in other devices.",
       link: "https://phonebook.bbalajis.com/",
       linkName: "phonebook.bbalajis.com",
-      img: Image,
+      img: PhoneBook,
     },
     {
       title: "Todo App Using ReactJS",
@@ -37,12 +39,6 @@ const Projects = () => {
       linkName: "orderFood",
       img: OnlineFood,
     },
-    {
-      title: "Project 1",
-      desc: "Description",
-      link: "www.bbalajis.com",
-      img: Image,
-    },
   ];
 
   const handleRedirect = (link) => {
@@ -51,7 +47,7 @@ const Projects = () => {
   };
   return (
     <section id="projects">
-      <div className="mx-auto lg:max-w-7xl h-auto justify-center">
+      <div className="font-serif mx-auto lg:max-w-7xl h-auto justify-center">
         <h1 className="text-5xl font-bold text-center">Projects</h1>
         <div className="md:grid md:grid-cols-2 xl:grid-cols-3 mt-[5vh] lg:px-[1vw] gap-x-8 gap-y-8">
           {Projects.map((project, index) => {
