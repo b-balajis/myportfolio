@@ -37,13 +37,13 @@ const Home = () => {
           </div>
           <img src={CodeCloseIcon} alt="icon" width={40} />
         </div>
-        <div className="md:mt-0 bg-blue-400 rounded-full">
+        <div className="md:mt-0 bg-blue-600 rounded-full">
           <Zoom>
             <img
               src={Balaji}
               alt="ok"
-              width={400}
-              className="rounded-full p-[1vh]"
+              width={600}
+              className="rounded-full py-[.9vh]"
             />
           </Zoom>
         </div>
