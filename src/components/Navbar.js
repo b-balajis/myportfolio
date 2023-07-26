@@ -24,8 +24,8 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="w-full shadow sticky top-0 z-50 bg-slate-50">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-2">
+    <nav className="w-full shadow top-0 z-50">
+      <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
@@ -52,19 +52,19 @@ const NavBar = () => {
             <div className="md:flex place-items-center">
               <div>
                 <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                  <li className="text-gray-600 hover:text-blue-600">
+                  <li className="text-xl hover:text-blue-600">
                     <a href="#home">Home</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
+                  <li className="text-xl hover:text-blue-600">
                     <a href="#about">About</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
+                  <li className="text-xl hover:text-blue-600">
                     <a href="#skills">Skills</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
+                  <li className="text-xl hover:text-blue-600">
                     <a href="#projects">Projects</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
+                  <li className="text-xl hover:text-blue-600">
                     <a href="#contact">Contact</a>
                   </li>
                 </ul>

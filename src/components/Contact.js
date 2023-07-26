@@ -1,13 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import axios from "axios";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import EmailIcon from "../assets/icons/mail.svg";
-import LocationOnIcon from "../assets/icons/location.svg";
-import CallIcon from "../assets/icons/call.svg";
+import TextField from "@mui/material/TextField";
+import axios from "axios";
+import React, { useState } from "react";
 import Slide from "react-reveal/Slide";
+import CallIcon from "../assets/icons/call.svg";
+import LocationOnIcon from "../assets/icons/location.svg";
+import EmailIcon from "../assets/icons/mail.svg";
 
 const Contact = () => {
   // const handleContactFormSubmit = (event) => {
@@ -54,7 +53,15 @@ const Contact = () => {
             component="form"
             noValidate
             onSubmit={handleSubmit}
-            sx={{ mt: 1 }}
+            sx={{ mt: 1,
+              border: "1px solid #e2e8f0",
+              borderRadius: "0.5rem",
+              padding: "2rem",
+              boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+              maxWidth:"60%",
+              margin:"auto",
+              backgroundColor: "#FFF"
+             }}
             className=" md:w-1/2 flex flex-col gap-y-4  w-full"
           >
             <Slide left>
@@ -120,7 +127,7 @@ const Contact = () => {
             </Slide>
           </Box>
           <Slide right>
-            <div className="md:w-1/2 border border-black  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0">
+            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0">
               <p className="text-center text-3xl font-bold my-4">
                 Contact Details
               </p>
