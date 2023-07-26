@@ -29,11 +29,11 @@ const NavBar = () => {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
-            <h2 className="text-4xl font-bold font-serif flex">
+            <h2 className="md:text-4xl text-3xl ml-[2vh] md:[0vh] font-bold font-serif flex">
               {/* <img src={Balaji} alt="Logo" className="w-[4vh] rounded-full" /> */}
               Balaji </h2>
             </a>
-            <div className="md:hidden">
+            <div className="md:hidden mr-[1.5vh]">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
