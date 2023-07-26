@@ -14,14 +14,14 @@ const Home = () => {
       "
       >
         <div className="space-y-8 font-serif">
-          <img src={CodeOpenIcon} alt="icon" width={40} /> 
+          <img src={CodeOpenIcon} alt="icon" width={40} className="ml-[1vh] md:ml[0vh]"/> 
           <div className="ml-[3vh] space-y-8 ">
             <h3 className="text-2xl">Hello I'm</h3>
-            <h1 className="md:text-6xl text-5xl font-bold">
+            <h1 className="md:text-6xl text-4xl font-bold">
               <span>Balaji Bheemavarapu</span>
             </h1>
-            <h2 className="text-4xl">Full Stack Web Developer - MERN</h2>
-            <p className="w-2/3 text-2xl">
+            <h2 className="md:text-4xl text-2xl">Full Stack Web Developer - MERN</h2>
+            <p className="w-full md:w-2/3 text-xl md:text-2xl">
               I have been working as a <b>Systems Engineer in Tata Consultancy Services (TCS)</b>. I am
               very passionate about my work.
             </p>
@@ -35,7 +35,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <img src={CodeCloseIcon} alt="icon" width={40} />
+          <img src={CodeCloseIcon} alt="icon" width={40} className="ml-[1vh] md:ml[0vh]"/>
         </div>
         <div className="md:mt-0 bg-blue-600 rounded-full">
           <Zoom duration={2000}>

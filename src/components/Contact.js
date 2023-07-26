@@ -55,7 +55,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             sx={{ mt: 1,
               border: "1px solid #e2e8f0",
-              borderRadius: "0.5rem",
+              borderRadius: "0.9rem",
               padding: "2rem",
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
               maxWidth:"60%",
@@ -127,7 +127,7 @@ const Contact = () => {
             </Slide>
           </Box>
           <Slide right>
-            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0">
+            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0 rounded-2xl">
               <p className="text-center text-3xl font-bold my-4">
                 Contact Details
               </p>
