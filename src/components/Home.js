@@ -16,11 +16,11 @@ const Home = () => {
         <div className="space-y-8 font-serif">
           <img src={CodeOpenIcon} alt="icon" width={40} /> 
           <div className="ml-[3vh] space-y-8 ">
-            <h4>HELLO</h4>
-            <h1 className="text-6xl font-bold">
-              I am <span>Balaji</span>
+            <h3 className="text-2xl">Hello I'm</h3>
+            <h1 className="md:text-6xl text-5xl font-bold">
+              <span>Balaji Bheemavarapu</span>
             </h1>
-            <h2 className="text-4xl font-bold">Full Stack Web Developer</h2>
+            <h2 className="text-4xl">Full Stack Web Developer - MERN</h2>
             <p className="w-2/3 text-2xl">
               I have been working as a <b>Systems Engineer in Tata Consultancy Services (TCS)</b>. I am
               very passionate about my work.
@@ -38,7 +38,7 @@ const Home = () => {
           <img src={CodeCloseIcon} alt="icon" width={40} />
         </div>
         <div className="md:mt-0 bg-blue-600 rounded-full">
-          <Zoom>
+          <Zoom duration={2000}>
             <img
               src={Balaji}
               alt="ok"

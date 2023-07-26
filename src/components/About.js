@@ -66,7 +66,7 @@ const About = () => {
               <TimelineItem>
                 <TimelineOppositeContent color="text.primary">
                   <Slide top duration={3000}>
-                    <p className="mt-1">{timeline.time}</p>
+                    <p className="mt-1 text-orange-600 font-bold text-lg">{timeline.time}</p>
                   </Slide>
                 </TimelineOppositeContent>
                 <TimelineSeparator
