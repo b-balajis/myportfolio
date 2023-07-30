@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import Resume from "../assets/doc/Bheemavarapu_Balaji.pdf";
+import Resume from "../assets/doc/Balaji_Bheemavarapu_Resume.pdf";
 
 const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
