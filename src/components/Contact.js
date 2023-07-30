@@ -7,6 +7,7 @@ import Slide from "react-reveal/Slide";
 import CallIcon from "../assets/icons/call.svg";
 import LocationOnIcon from "../assets/icons/location.svg";
 import EmailIcon from "../assets/icons/mail.svg";
+import CheckIcon from "../assets/icons/tick.svg";
 
 const Contact = () => {
   // const handleContactFormSubmit = (event) => {
@@ -46,22 +47,23 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <div className="mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-0">
+      <div className="font-serif mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-0">
         <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
         <div className="md:flex md:space-x-4 mt-[5vh]">
           <Box
             component="form"
             noValidate
             onSubmit={handleSubmit}
-            sx={{ mt: 1,
+            sx={{
+              mt: 1,
               border: "1px solid #e2e8f0",
               borderRadius: "0.9rem",
               padding: "2rem",
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-              maxWidth:"60%",
-              margin:"auto",
-              backgroundColor: "#FFF"
-             }}
+              maxWidth: "60%",
+              margin: "auto",
+              backgroundColor: "#FFF",
+            }}
             className=" md:w-1/2 flex flex-col gap-y-4  w-full"
           >
             <Slide left>
@@ -127,11 +129,11 @@ const Contact = () => {
             </Slide>
           </Box>
           <Slide right>
-            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0 rounded-2xl">
+            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0 rounded-2xl font-bold">
               <p className="text-center text-3xl font-bold my-4">
                 Contact Details
               </p>
-              <div className="ml-[4vh] md:ml-[8vh] space-y-8 mb-4">
+              <div className="ml-[4vh] md:ml-[8vh] space-y-8 mb-4 text-xl">
                 <p className="flex place-items-center">
                   <span className="mr-4">
                     <img src={EmailIcon} alt="email" width={32} />
@@ -140,13 +142,19 @@ const Contact = () => {
                 </p>
                 <p className="flex place-items-center">
                   <span className="mr-4">
-                    <img src={CallIcon} alt="email" width={32} />
+                    <img src={CallIcon} alt="mobile" width={32} />
                   </span>
                   +91 80080 75376
                 </p>
                 <p className="flex place-items-center">
                   <span className="mr-4">
-                    <img src={LocationOnIcon} alt="email" width={32} />
+                    <img src={CheckIcon} alt="available" width={32} />
+                  </span>
+                  Freelancing Available
+                </p>
+                <p className="flex place-items-center">
+                  <span className="mr-4">
+                    <img src={LocationOnIcon} alt="place" width={32} />
                   </span>
                   Chirala, Andhra Pradesh, India.
                 </p>

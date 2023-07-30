@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import LinkedInIcon from "../assets/icons/linkedin.svg";
+import { Rotate } from "react-reveal";
+import FacebookIcon from "../assets/icons/fb.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
-import FacebookIcon from "../assets/icons/fb.svg";
+import LinkedInIcon from "../assets/icons/linkedin.svg";
 import TwitterIcon from "../assets/icons/twitter.svg";
-import { Rotate } from "react-reveal";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -51,7 +51,7 @@ const Footer = () => {
 
   return (
     <section id="footer">
-      <div className="bg-blue-600 py-[1vh]">
+      <div className="bg-blue-600 py-[1vh] font-serif">
         <div className="text-center mx-auto lg:max-w-7xl">
           <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
           <div className="flex space-x-5 justify-center my-[2vh]">

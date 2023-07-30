@@ -51,7 +51,7 @@ const NavBar = () => {
           >
             <div className="md:flex place-items-center">
               <div>
-                <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ml-[2vh] md:ml-0">
                   <li className="text-xl hover:text-blue-600">
                     <a href="#home">Home</a>
                   </li>

@@ -1,18 +1,61 @@
-import Button from "@mui/material/Button";
 import React from "react";
 import { Zoom } from "react-reveal";
-import RubberBand from "react-reveal/RubberBand";
 import CodeCloseIcon from "../assets/icons/code.svg";
 import CodeOpenIcon from "../assets/icons/codeIcon.svg";
+import GitHubIcon from "../assets/icons/githubHome.svg";
+import InstagramIcon from "../assets/icons/instaHome.svg";
+import LinkedInIcon from "../assets/icons/linkedinHome.svg";
 import Balaji from "../assets/img/balaji.png";
 
 const Home = () => {
+  const socialMedia = [
+    {
+      name: "LinkedIn",
+      icon: LinkedInIcon,
+      link: "https://www.linkedin.com/in/b-balajis/",
+      color: "blue",
+    },
+    {
+      name: "GitHub",
+      icon: GitHubIcon,
+      link: "https://github.com/b-balajis",
+      color: "black",
+    },
+    {
+      name: "Instagram",
+      icon: InstagramIcon,
+      link: "https://www.instagram.com/balaji._.b/",
+      color: "red",
+    }
+  ];
+
+  const handleAnimation = () => {
+    console.log("ok");
+  }
+
+  
   return (
     <section id="home">
       <div
         className="flex flex-col justify-center place-items-center mx-auto v-screen lg:flex-row lg:justify-around lg:max-w-7xl md:mt-[10vh]
       "
       >
+              <div className="hidden md:flex md:flex-col md:space-y-4">
+              {socialMedia.map((app) => (
+                <a href={app.link} target="_blank" rel="noreferrer">
+                  <div
+                    className="bg-white p-[.5vh] hover:bg-blue-400 rounded-lg"
+                    style={{
+                      color: `${app.color}`,
+                    }}
+                    onMouseEnter={() => handleAnimation(app.animation)}
+                  >
+                    <img src={app.icon} alt={app.name} width={44} />
+                  </div>
+                </a>
+              ))}
+              </div>
+
         <div className="space-y-8 font-serif">
           <img src={CodeOpenIcon} alt="icon" width={40} className="ml-[1vh] md:ml[0vh]"/> 
           <div className="ml-[3vh] space-y-8 ">
@@ -25,15 +68,6 @@ const Home = () => {
               I have been working as a <b>Systems Engineer in Tata Consultancy Services (TCS)</b>. I am
               very passionate about my work.
             </p>
-            <div className="w-40">
-              <a href="#contact">
-                <RubberBand>
-                  <Button variant="contained" className="w-40">
-                    Let`s Talk
-                  </Button>
-                </RubberBand>
-              </a>
-            </div>
           </div>
           <img src={CodeCloseIcon} alt="icon" width={40} className="ml-[1vh] md:ml[0vh]"/>
         </div>
