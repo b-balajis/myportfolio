@@ -56,7 +56,7 @@ const Projects = () => {
                 <Zoom  duration={3000}>
                   <div
                     key={index}
-                    className="relative mt-[5vh] md:mt-0 flex justify-center v-screen"
+                    className="relative mt-[5vh] md:mt-0 flex justify-center v-screen text-black"
                     onMouseEnter={() => setLaunch(true)}
                     onMouseLeave={() => setLaunch(false)}
                   >
