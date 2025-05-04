@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Rotate } from "react-reveal";
-import FacebookIcon from "../assets/icons/fb.svg";
 import GitHubIcon from "../assets/icons/github.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
+import LeetCodeIcon from "../assets/icons/leetcode.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
-import TwitterIcon from "../assets/icons/twitter.svg";
+import TwitterIcon from "../assets/icons/x.svg";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -30,16 +30,16 @@ const Footer = () => {
       color: "black",
     },
     {
+      name: "LeetCode",
+      icon: LeetCodeIcon,
+      link: "https://leetcode.com/u/b_balajis/",
+      color: "blue",
+    },
+    {
       name: "Instagram",
       icon: InstagramIcon,
       link: "https://www.instagram.com/balaji._.b/",
       color: "red",
-    },
-    {
-      name: "Facebook",
-      icon: FacebookIcon,
-      link: "https://www.facebook.com/BBalajis/",
-      color: "blue",
     },
     {
       name: "Twitter",

@@ -1,105 +1,55 @@
-import Timeline from "@mui/lab/Timeline";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import { Typography } from "@mui/material";
-import * as React from "react";
-import Slide from "react-reveal/Slide";
+import React from "react";
+// import { Flip } from "react-awesome-reveal";
+import { Flip, Slide } from "react-reveal";
+import Balaji from "../assets/img/about.jpg";
 
 const About = () => {
-  const aboutTimeline = [
-    {
-      title: "SSC",
-      desc: "SSVN High School, Chirala",
-      time: "2016-2017",
-      link: ""
-    },
-    {
-      title: "Intermediate",
-      desc: "Sri Gowthami Junior College, Chirala",
-      time: "2017-2019",
-      link: ""
-    },
-    {
-      title: "Bachelor of Technology (B.Tech)",
-      desc: "GMR Institute of Technology, Rajam",
-      time: "2019-2023",
-      link: ""
-    },
-    {
-      title: "Vice Chair of ACM GMRIT",
-      desc: "ACM is Student Chapter",
-      time: "2022-2023",
-      link: "https://www.linkedin.com/posts/b-balajis_congratulations-to-the-new-team-of-gmrasc-activity-6936018568626987008-HjmK?utm_source=share&utm_medium=member_desktop"
-    },
-    {
-      title: "3604 Global rank in Codevita",
-      desc: "TCS Codevita Season 10",
-      time: "2022",
-      link: "https://www.linkedin.com/posts/b-balajis_tcs-tcscodevita-activity-6936024145121947648-VHU8?utm_source=share&utm_medium=member_desktop"
-    },
-    {
-      title: "Software Engineer Trainee",
-      desc: "Revidd, Visakhapatnam ",
-      time: "June 2022 - May 2023",
-      link: "https://www.linkedin.com/posts/b-balajis_reactjs-tailwindcss-mui-activity-7065630132589232128-Lmb0?utm_source=share&utm_medium=member_desktop"
-    },
-    {
-      title: "Systems Engineer",
-      desc: "Tata Consultancy Services (TCS), Ahmedabad",
-      time: "June 2023 - Present",
-      link: "https://www.linkedin.com/posts/b-balajis_systemsengineer-tcs-newbeginning-activity-7084939457988104192-zqKV?utm_source=share&utm_medium=member_desktop"
-    }
-  ];
-
-  const about = aboutTimeline.reverse();
   return (
-    <section id="about">
-      <div className="mx-auto lg:max-w-7xl h-auto font-serif">
+    <section id="about" className="py-6 scroll-mt-20">
+      <div className="mx-auto lg:max-w-6xl h-auto font-serif">
         <p className="text-center text-5xl font-bold">About Me</p>
-        <div className="mt-[5vh]">
-          <Timeline position="alternate">
-            {about.map((timeline, index) => (
-              <TimelineItem>
-                <TimelineOppositeContent color="text.primary">
-                  <Slide top duration={3000}>
-                    <p className="mt-1 text-orange-600 font-bold text-lg">{timeline.time}</p>
-                  </Slide>
-                </TimelineOppositeContent>
-                <TimelineSeparator
-                  sx={{
-                    minHeight: 100,
-                    marginTop: 0.5,
-                    marginBottom: 0.5,
-                  }}
-                >
-                  {index % 2 === 0 ? (
-                    <TimelineDot color="primary" variant="outlined" />
-                  ) : (
-                    <TimelineDot color="secondary" />
-                  )}
-                  {about.length - 1 === index ? null : <TimelineConnector />}
-                </TimelineSeparator>
-                <TimelineContent>
-                  <Slide top>
-                    <a href={timeline.link}>
-                    <p className="text-base font-bold md:text-2xl font-serif hover:cursor-pointer">
-                      {timeline.title}
-                    </p>
-                    </a>
-                  </Slide>
-                  <Typography>
-                    <Slide bottom>
-                      <p className="text-sm md:text-lg">{timeline.desc}</p>
-                    </Slide>
-                  </Typography>
-                </TimelineContent>
-              </TimelineItem>
-            ))}
-          </Timeline>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-8 md:mt-[6vh]">
+          <div className="mt-10 lg:mt-0 bg-blue-600 rounded-full overflow-hidden shadow-lg animate-float ">
+            <Flip left duration={2500}>
+              <img
+                src={Balaji}
+                alt="about"
+                className="w-80 h-96 object-cover rounded-full p-1 hover:scale-105 transition-transform duration-300"
+              />
+            </Flip>
+          </div>
+
+          {/* Right: Content (70%) */}
+          <Slide right>
+            <div className="w-full md:w-2/3 ml-9">
+              <p className=" text-lg leading-relaxed">
+                I'm a Full Stack Developer with 2.5+ years of hands on
+                experience building scalable, user-focused web applications
+                using the MERN stack (MongoDB, Express.js, React.js, Node.js).
+                My passion lies in turning complex ideas into high-performing
+                solutions, with a focus on clean code, intuitive UI, and
+                efficient backend logic.
+              </p>
+              <p p className=" text-lg mt-4 leading-relaxed">
+                At <strong>Tata Consultancy Services (TCS)</strong>, I hold the
+                designation of <strong>Systems Engineer</strong>, working in the
+                role of a Full Stack Developer. I contribute to fintech
+                platforms that automate mortgage product selection —
+                transforming static workflows into dynamic, microservice-based
+                systems that have improved speed and reduced manual efforts by
+                95%.
+              </p>
+              <p className=" text-lg mt-4 leading-relaxed">
+                I’ve worked across the stack — deploying with Azure DevOps,
+                managing APIs via Azure APIM, and ensuring code quality through
+                CI/CD, unit testing, and performance monitoring tools
+              </p>
+              <p className=" text-lg mt-4 leading-relaxed">
+                I’m always open to learning new technologies and collaborating
+                on innovative projects that solve real-world problems.
+              </p>
+            </div>
+          </Slide>
         </div>
       </div>
     </section>

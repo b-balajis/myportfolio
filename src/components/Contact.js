@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <div className="font-serif mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-0">
+      <div className="font-serif mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-8">
         <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
         <div className="md:flex md:space-x-4 mt-[5vh]">
           <Box
@@ -153,10 +153,10 @@ const Contact = () => {
                   Freelancing Available
                 </p>
                 <p className="flex place-items-center">
-                  <span className="mr-4">
+                  <span className="mr-4 animate-bounce">
                     <img src={LocationOnIcon} alt="place" width={32} />
                   </span>
-                  Chirala, Andhra Pradesh, India.
+                  Hyderabad, India.
                 </p>
               </div>
             </div>
