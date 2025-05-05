@@ -144,7 +144,7 @@ const Contact = () => {
                   <span className="mr-4">
                     <img src={CallIcon} alt="mobile" width={32} />
                   </span>
-                  +91 80080 75376
+                  +91 80xxx xxx76
                 </p>
                 <p className="flex place-items-center">
                   <span className="mr-4">
