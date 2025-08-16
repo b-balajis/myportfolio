@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Rotate } from "react-reveal";
 import GitHubIcon from "../assets/icons/github.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
@@ -16,6 +16,7 @@ const Footer = () => {
 
     return () => clearInterval(interval);
   }, []);
+
   const socialMedia = [
     {
       name: "LinkedIn",
@@ -51,27 +52,42 @@ const Footer = () => {
 
   return (
     <section id="footer">
-      <div className="bg-blue-600 py-[1vh] font-serif">
-        <div className="text-center mx-auto lg:max-w-7xl">
-          <p className="text-3xl font-bold text-white">Balaji Bheemavarapu</p>
-          <div className="flex space-x-5 justify-center my-[2vh]">
+      <div className="bg-blue-600 py-6 sm:py-4 font-serif">
+        <div className="text-center mx-auto max-w-7xl px-4">
+          {/* Name */}
+          <p className="text-2xl sm:text-3xl font-bold text-white">
+            Balaji Bheemavarapu
+          </p>
+
+          {/* Social icons */}
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 my-6">
             <Rotate bottom left duration={3000}>
-              {socialMedia.map((app) => (
-                <a href={app.link} target="_blank" rel="noreferrer">
+              {socialMedia.map((app, idx) => (
+                <a
+                  key={idx}
+                  href={app.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
                   <div
-                    className="bg-white rounded-full p-[.5vh]"
-                    style={{
-                      color: `${app.color}`,
-                    }}
+                    className="bg-white rounded-full p-2 sm:p-3 flex items-center justify-center shadow-md md:p-[.5vh]"
+                    style={{ color: app.color }}
                   >
-                    <img src={app.icon} alt={app.name} width={32} />
+                    <img
+                      src={app.icon}
+                      alt={app.name}
+                      className="w-6 h-6 sm:w-8 sm:h-8"
+                    />
                   </div>
                 </a>
               ))}
             </Rotate>
           </div>
-          <p className="text-white mb-2">
-            <span className="text-lg"> &copy;</span> {year} Balaji Bheemavarapu
+
+          {/* Copyright */}
+          <p className="text-white text-sm sm:text-base mb-2">
+            <span className="text-lg">&copy;</span> {year} Balaji Bheemavarapu
           </p>
         </div>
       </div>

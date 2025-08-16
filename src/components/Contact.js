@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import Slide from "react-reveal/Slide";
 import CallIcon from "../assets/icons/call.svg";
 import LocationOnIcon from "../assets/icons/location.svg";
@@ -10,16 +10,6 @@ import EmailIcon from "../assets/icons/mail.svg";
 import CheckIcon from "../assets/icons/tick.svg";
 
 const Contact = () => {
-  // const handleContactFormSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   const name = data.get("name");
-  //   const email = data.get("email");
-  //   const subject = data.get("subject");
-  //   const msg = data.get("message");
-  //   console.log(name, email, subject, msg);
-  // };
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,48 +19,43 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
       .post("/process-form", formData)
-      .then((res) => {
-        alert("Form submitted successfully!");
-      })
-      .catch((err) => {
-        alert("Error submitting form. Please try later.");
-      });
+      .then(() => alert("Form submitted successfully!"))
+      .catch(() => alert("Error submitting form. Please try later."));
   };
 
   return (
-    <section id="contact">
-      <div className="font-serif mx-auto lg:max-w-7xl mb-[5vh] px-[3vw] md:px-8">
-        <h1 className="text-center text-5xl font-bold mt-[3vh]">Contact Me</h1>
-        <div className="md:flex md:space-x-4 mt-[5vh]">
+    <section id="contact" className="px-4 md:px-20 py-10 scroll-mt-8">
+      <div className="font-serif mx-auto max-w-7xl">
+        <h1 className="text-center text-4xl sm:text-5xl font-bold mb-8">
+          Contact Me
+        </h1>
+
+        {/* Container for form + details */}
+        <div className="flex flex-col md:flex-row md:space-x-6 gap-8">
+          {/* Contact Form */}
           <Box
             component="form"
             noValidate
             onSubmit={handleSubmit}
             sx={{
-              mt: 1,
               border: "1px solid #e2e8f0",
               borderRadius: "0.9rem",
-              padding: "2rem",
+              padding: "1.5rem",
               boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-              maxWidth: "60%",
-              margin: "auto",
               backgroundColor: "#FFF",
             }}
-            className=" md:w-1/2 flex flex-col gap-y-4  w-full"
+            className="w-full md:w-1/2 flex flex-col gap-y-4"
           >
             <Slide left>
               <TextField
                 required
                 name="name"
-                id="outlined-basic"
                 label="Your Name"
                 variant="outlined"
                 size="small"
@@ -78,48 +63,47 @@ const Contact = () => {
                 fullWidth
               />
             </Slide>
+
             <Slide left>
-              <div className="md:flex justify-between md:space-x-2 space-y-4 md:space-y-0">
+              <div className="flex flex-col md:flex-row gap-4">
                 <TextField
                   required
-                  id="outlined-basic"
                   name="email"
                   label="Email"
                   variant="outlined"
                   size="small"
-                  fullWidth
                   onChange={handleChange}
+                  fullWidth
                 />
                 <TextField
                   required
-                  id="outlined-basic"
                   name="subject"
                   label="Subject"
                   variant="outlined"
                   size="small"
-                  fullWidth
                   onChange={handleChange}
+                  fullWidth
                 />
               </div>
             </Slide>
+
             <Slide left>
               <TextField
-                id="outlined-basic"
                 name="message"
                 label="Message"
                 variant="outlined"
                 multiline
-                rows={3}
-                maxRows={5}
+                rows={4}
                 onChange={handleChange}
                 fullWidth
               />
             </Slide>
+
             <Slide left>
               <div className="flex justify-center">
                 <Button
                   variant="contained"
-                  className="w-2/3"
+                  className="w-full sm:w-2/3"
                   size="large"
                   type="submit"
                 >
@@ -128,34 +112,34 @@ const Contact = () => {
               </div>
             </Slide>
           </Box>
+
+          {/* Contact Details */}
           <Slide right>
-            <div className="md:w-1/2 border border-gray-300  flex flex-col gap-y-4  w-full mt-[4vh] md:mt-0 rounded-2xl font-bold">
-              <p className="text-center text-3xl font-bold my-4">
+            <div className="w-full md:w-1/2 border border-gray-300 rounded-2xl p-6 flex flex-col justify-center shadow-sm">
+              <p className="text-center text-2xl sm:text-3xl font-bold mb-6">
                 Contact Details
               </p>
-              <div className="ml-[4vh] md:ml-[8vh] space-y-8 mb-4 text-xl">
-                <p className="flex place-items-center">
-                  <span className="mr-4">
-                    <img src={EmailIcon} alt="email" width={32} />
-                  </span>
+
+              <div className="space-y-6 text-base sm:text-lg font-medium">
+                <p className="flex items-center">
+                  <img src={EmailIcon} alt="email" width={28} className="mr-3" />
                   balajibheemavarapu@gmail.com
                 </p>
-                <p className="flex place-items-center">
-                  <span className="mr-4">
-                    <img src={CallIcon} alt="mobile" width={32} />
-                  </span>
+                <p className="flex items-center">
+                  <img src={CallIcon} alt="mobile" width={28} className="mr-3" />
                   +91 80xxx xxx76
                 </p>
-                <p className="flex place-items-center">
-                  <span className="mr-4">
-                    <img src={CheckIcon} alt="available" width={32} />
-                  </span>
+                <p className="flex items-center">
+                  <img src={CheckIcon} alt="available" width={28} className="mr-3" />
                   Freelancing Available
                 </p>
-                <p className="flex place-items-center">
-                  <span className="mr-4 animate-bounce">
-                    <img src={LocationOnIcon} alt="place" width={32} />
-                  </span>
+                <p className="flex items-center">
+                  <img
+                    src={LocationOnIcon}
+                    alt="place"
+                    width={28}
+                    className="mr-3 animate-bounce"
+                  />
                   Hyderabad, India.
                 </p>
               </div>

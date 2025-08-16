@@ -38,13 +38,13 @@ function App() {
         }}
       />
       {/* The rest of your app goes here */}
-      <div className="relative min-h-screen flex items-center justify-center text-white">
+      <div className="relative min-h-screen flex flex-col items-center justify-center text-white overflow-x-hidden">
         <SpaceBackground />
         {!loadingDone && (
           <PortfolioLoader onComplete={() => setLoadingDone(true)} />
         )}
         {loadingDone && (
-          <main>
+          <main className="w-full">
             <div className="z-10">
               <Navbar />
               <Home />
@@ -59,6 +59,7 @@ function App() {
           </main>
         )}
       </div>
+
     </>
   );
 }

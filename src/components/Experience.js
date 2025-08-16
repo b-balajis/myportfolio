@@ -10,8 +10,9 @@ import {
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
-import { Box, Collapse, IconButton, Paper, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, Collapse, IconButton, Paper, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { useState } from "react";
 import { Slide } from "react-reveal";
 
 const experiences = [
@@ -83,6 +84,9 @@ const experiences = [
 export default function AlternatingTimeline() {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const toggleExpand = (index) => {
     setExpandedIndex((prev) => (prev === index ? null : index));
   };
@@ -90,23 +94,25 @@ export default function AlternatingTimeline() {
   return (
     <section id="experience" className="py-6 scroll-mt-8">
       <div className="mx-auto lg:max-w-7xl h-auto font-serif">
-        <p className="text-center text-5xl font-bold">
+        <p className="text-center text-3xl sm:text-4xl md:text-5xl font-bold">
           Professional Experience
         </p>
         <div>
           <Box p={4}>
-            <Timeline position="alternate">
+            <Timeline position={isMobile ? "right" : "alternate"}>
               {experiences.map((exp, index) => (
                 <TimelineItem key={index}>
+                  {/* Opposite content only on larger screens */}
                   <TimelineOppositeContent
                     sx={{
-                      display: { xs: "none", sm: "block", marginTop: 18 },
+                      display: { xs: "none", sm: "block" },
                       textAlign: index % 2 === 0 ? "right" : "left",
                     }}
                   >
                     <Typography variant="body2">{exp.time}</Typography>
                   </TimelineOppositeContent>
 
+                  {/* Line + Dot always stays on left */}
                   <TimelineSeparator>
                     <Slide top duration={3000}>
                       <TimelineDot color="primary">{exp.icon}</TimelineDot>
@@ -114,7 +120,11 @@ export default function AlternatingTimeline() {
                     {index !== experiences.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
 
-                  <TimelineContent>
+                  <TimelineContent
+                    sx={{
+                      textAlign: { xs: "right", sm: "inherit" }, // mobile → align right
+                    }}
+                  >
                     <Slide top duration={3000}>
                       <Paper
                         elevation={4}
@@ -128,16 +138,24 @@ export default function AlternatingTimeline() {
                           fontFamily: "serif",
                         }}
                       >
-                        <Box
-                          display="flex"
-                          alignItems="center"
-                          justifyContent="space-between"
+                        {/* Show time inside card on mobile */}
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            display: { xs: "block", sm: "none" },
+                            mb: 1,
+                            fontStyle: "italic",
+                            color: "lightgray",
+                            textAlign: "left",
+                          }}
                         >
+                          {exp.time}
+                        </Typography>
+
+                        <Box display="flex" alignItems="center" justifyContent="space-between">
                           <div>
                             <div className="flex flex-wrap items-baseline">
-                              <p className="font-bold text-xl">
-                                {exp.role},&nbsp;
-                              </p>
+                              <p className="font-bold text-xl">{exp.role},&nbsp;</p>
                               <p className="text-lg">
                                 <i>{exp.company}</i>
                               </p>
@@ -146,48 +164,37 @@ export default function AlternatingTimeline() {
 
                           <IconButton
                             onClick={() => toggleExpand(index)}
-                            sx={{
-                              color: "#fff",
-                            }}
+                            sx={{ color: "#fff" }}
                           >
                             <ExpandMoreIcon
                               sx={{
                                 transform:
-                                  expandedIndex === index
-                                    ? "rotate(180deg)"
-                                    : "rotate(0)",
+                                  expandedIndex === index ? "rotate(180deg)" : "rotate(0)",
                                 transition: "transform 0.3s",
                               }}
                             />
                           </IconButton>
                         </Box>
 
-                        {/* Show short preview if not expanded */}
-                        {expandedIndex !== index &&
-                          exp.responsibilities.length > 0 && (
-                            <Typography
-                              variant="body2"
-                              mt={1}
-                              sx={{
-                                textAlign: "left",
-                              }}
-                            >
-                              {exp.responsibilities[0]}
-                              {exp.responsibilities[1] && (
-                                <>
-                                  <br />
-                                  {exp.responsibilities[1]}
-                                </>
-                              )}
-                            </Typography>
-                          )}
+                        {/* Preview text when not expanded */}
+                        {expandedIndex !== index && exp.responsibilities.length > 0 && (
+                          <Typography
+                            variant="body2"
+                            mt={1}
+                            sx={{ textAlign: "left" }}
+                          >
+                            {exp.responsibilities[0]}
+                            {exp.responsibilities[1] && (
+                              <>
+                                <br />
+                                {exp.responsibilities[1]}
+                              </>
+                            )}
+                          </Typography>
+                        )}
 
-                        {/* Full content when expanded */}
-                        <Collapse
-                          in={expandedIndex === index}
-                          timeout="auto"
-                          unmountOnExit
-                        >
+                        {/* Expanded content */}
+                        <Collapse in={expandedIndex === index} timeout="auto" unmountOnExit>
                           <Box sx={{ textAlign: "left", mt: 1 }}>
                             <Typography variant="subtitle2" fontWeight="bold">
                               Responsibilities:

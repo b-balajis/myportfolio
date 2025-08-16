@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 import Resume from "../assets/doc/Balaji_Bheemavarapu_Resume.pdf";
 import CodeCloseIcon from "../assets/icons/code.svg";
@@ -52,7 +52,6 @@ const Home = () => {
 
           if (charIndex === currentRole.length) {
             setDeleting(true);
-            setTimeout(() => {}, 1000);
           }
         } else {
           setText(currentRole.substring(0, charIndex - 1));
@@ -71,11 +70,11 @@ const Home = () => {
   }, [charIndex, deleting, roleIndex]);
 
   return (
-    <section id="home" className="py-6">
+    <section id="home" className="md:py-14 py-12">
       <Fade delay={1e1} cascade damping={1e3}>
-        <div className="flex flex-col justify-center place-items-center mx-auto v-screen lg:flex-row lg:justify-around lg:max-w-6xl md:mt-[16vh]">
-          {/* Social Icons */}
-          <div className="hidden md:flex flex-col space-y-4">
+        <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:justify-around lg:max-w-6xl md:mt-[12vh]">
+          {/* Social Icons - left for lg, below intro for mobile */}
+          <div className="hidden lg:flex flex-col space-y-4">
             {socialMedia.map((app, index) => (
               <a
                 href={app.link}
@@ -84,44 +83,62 @@ const Home = () => {
                 rel="noreferrer"
                 aria-label={app.name}
               >
-                <div
-                  className={`bg-white p-2 rounded-lg shadow-md hover:scale-110 transition-transform duration-200 `}
-                >
-                  <img src={app.icon} alt={`${app.name} icon`} width={36} />
+                <div className="bg-white p-2 rounded-lg shadow-md hover:scale-110 transition-transform duration-200">
+                  <img src={app.icon} alt={`${app.name} icon`} width={32} />
                 </div>
               </a>
             ))}
           </div>
 
           {/* Intro Text */}
-          <div className="space-y-6 text-center lg:text-left font-serif max-w-xl">
+          <div className="space-y-6 text-center lg:text-left font-serif max-w-xl px-4">
             <img
               src={CodeOpenIcon}
               alt="Code Open Icon"
-              width={40}
+              width={32}
               className="mx-auto lg:mx-0"
             />
-            <div className="space-y-6">
-              <h3 className="text-2xl ">Hello, I'm</h3>
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-600">
+
+            <div className="space-y-4">
+              <h3 className="text-lg md:text-xl">Hello, I'm</h3>
+
+              {/* Profile image ONLY for mobile */}
+              <div className="flex justify-center lg:hidden">
+                <div className="mt-4 mb-4 bg-blue-600 rounded-full overflow-hidden shadow-lg animate-float">
+                  <img
+                    src={Balaji}
+                    alt="Balaji Bheemavarapu Profile"
+                    className="w-40 h-40 object-cover rounded-full p-1 hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </div>
+
+              <h1 className="text-3xl md:text-5xl font-bold text-blue-600">
                 Balaji Bheemavarapu
               </h1>
-              <h2 className="text-2xl md:text-3xl  font-semibold">
+
+              <h2 className="text-lg md:text-2xl font-semibold">
                 {text}
-                <span className="animate-blink ">|</span>
+                <span className="animate-blink">|</span>
               </h2>
 
-              <p className="text-lg md:text-xl ">
-                Full Stack Developer with 2.5+ years of hands-on experience in
-                MERN stack, REST/GraphQL APIs, TypeScript, Azure DevOps & cloud.
-                Skilled in building scalable fintech apps, CI/CD, and writing
-                clean, testable code in Agile environments.
+              <p className="text-sm md:text-lg leading-relaxed">
+                Full Stack Developer with 3+ years (2.2 years full-time)
+                of experience in scalable MERN stack development.
+                Skilled in REST/GraphQL APIs, TypeScript, and
+                DevOps with Docker, Kubernetes, and Azure.
+                Exploring LLM integration and AI-assisted workflows
+                (LangChain, Copilot, GenAI). Familiar with designing
+                microservice architectures and scalable system
+                design patterns.
+
               </p>
             </div>
+
             <a
-              href={Resume} // Replace with your actual resume file path
+              href={Resume}
               download
-              className="inline-flex items-center px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition duration-200 shadow"
+              className="inline-flex items-center px-5 py-2 bg-blue-600 text-white text-sm md:text-base font-medium rounded hover:bg-blue-700 transition duration-200 shadow"
             >
               Download Resume
               <svg
@@ -143,13 +160,30 @@ const Home = () => {
             <img
               src={CodeCloseIcon}
               alt="Code Close Icon"
-              width={40}
+              width={32}
               className="mx-auto lg:mx-0"
             />
+
+            {/* Social Icons for mobile */}
+            <div className="flex lg:hidden justify-center space-x-4 mt-6">
+              {socialMedia.map((app, index) => (
+                <a
+                  href={app.link}
+                  key={index}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={app.name}
+                >
+                  <div className="bg-white p-2 rounded-lg shadow-md hover:scale-110 transition-transform duration-200">
+                    <img src={app.icon} alt={`${app.name} icon`} width={28} />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Profile Image */}
-          <div className="mt-[16rem] lg:mt-0 bg-blue-600 rounded-full overflow-hidden shadow-lg animate-float ">
+          {/* Profile Image for large screens */}
+          <div className="hidden lg:block mt-12 lg:mt-0 bg-blue-600 rounded-full overflow-hidden shadow-lg animate-float">
             <img
               src={Balaji}
               alt="Balaji Bheemavarapu Profile"

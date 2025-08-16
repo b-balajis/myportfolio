@@ -111,8 +111,9 @@ export default function Achievements() {
   return (
     <section id="achievements" className="px-4 text-white py-10 scroll-mt-8">
       <div className="max-w-6xl mx-auto text-center font-serif">
-        <h2 className="text-5xl font-bold mb-4">Achievements</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Achievements</h2>
         <div className="relative">
+          {/* Left Button */}
           <button
             onClick={() => scroll("left")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full z-10"
@@ -120,26 +121,29 @@ export default function Achievements() {
             <ArrowBackIosNewIcon fontSize="small" />
           </button>
 
+          {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto px-8 scroll-smooth scrollbar-hide"
+            className="flex gap-6 overflow-x-auto px-4 md:px-8 scroll-smooth scrollbar-hide"
           >
             {achievements.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[300px] my-5 bg-gray-800 rounded-2xl p-4 shadow-lg hover:scale-105 hover:bg-gray-700 transition-transform duration-300"
+                className="min-w-[260px] sm:min-w-[280px] md:min-w-[300px] my-5 bg-gray-800 rounded-2xl p-4 shadow-lg hover:scale-105 hover:bg-gray-700 transition-transform duration-300"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-44 object-cover rounded-xl mb-4 cursor-pointer"
+                  className="w-full h-36 md:h-44 object-cover rounded-xl mb-4 cursor-pointer"
                   onClick={() => openModal(item.image)}
                 />
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm mb-2 text-left">
+                <h3 className="text-base md:text-lg font-semibold mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 text-sm md:text-base mb-2 text-left">
                   {item.description}
                 </p>
-                <p className="text-gray-500 text-xs mb-4">
+                <p className="text-gray-500 text-xs md:text-sm mb-4">
                   {format(new Date(item.date), "MMMM dd, yyyy")}
                 </p>
                 {item.link && (
@@ -152,20 +156,14 @@ export default function Achievements() {
                     >
                       View
                     </a>
-                    <img
-                      src={Launch}
-                      alt="Launch"
-                      width={20}
-                      style={{
-                        color: "#fff",
-                      }}
-                    />
+                    <img src={Launch} alt="Launch" width={20} />
                   </div>
                 )}
               </div>
             ))}
           </div>
 
+          {/* Right Button */}
           <button
             onClick={() => scroll("right")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full z-10"
@@ -178,7 +176,7 @@ export default function Achievements() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-4 rounded-lg relative">
+          <div className="bg-white p-4 rounded-lg relative w-[90%] max-w-lg">
             <CloseIcon
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-500 cursor-pointer"

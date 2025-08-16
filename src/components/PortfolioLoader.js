@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 const PortfolioLoader = ({ onComplete }) => {
   const [show, setShow] = useState(true);
   const [text, setText] = useState("");
-  const fullText =
-    "Heello! Loading awesomeness... Get ready to explore Balaji's portfolio.";
+  const fullText = "Weelcome, I'm Balaji 🚀";
 
   useEffect(() => {
     let index = 0;
@@ -17,33 +16,35 @@ const PortfolioLoader = ({ onComplete }) => {
       }
       setText((prev) => prev + fullText.charAt(index));
       index++;
-    }, 90);
+    }, 80); // typing speed
 
     const timer = setTimeout(() => {
       setShow(false);
-      setTimeout(onComplete, 600);
-    }, fullText.length * 90 + 1000); // adjust duration based on text
+      setTimeout(onComplete, 600); // wait for fade-out
+    }, fullText.length * 80 + 1200); // extra pause before fade-out
 
     return () => {
       clearInterval(typingInterval);
       clearTimeout(timer);
     };
-  }, [onComplete]);
+  }, [onComplete, fullText]);
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          className="fixed inset-0 bg-black text-white flex items-center justify-center z-50 font-serif sm:text-3xl"
+          className="fixed inset-0 bg-black text-white flex items-center justify-center z-50 font-serif"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.5 } }}
+          exit={{ opacity: 0, transition: { duration: 0.6 } }}
         >
-          <p className="text-4xl">
+          <p className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide">
             {text.split("Balaji").map((part, index) => (
               <span key={index}>
                 {part}
                 {index < text.split("Balaji").length - 1 && (
-                  <span className="text-blue-600 font-bold">Balaji</span>
+                  <span className="text-blue-500 font-extrabold">
+                    Balaji
+                  </span>
                 )}
               </span>
             ))}

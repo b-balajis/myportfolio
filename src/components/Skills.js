@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "react-animated-3d-card";
 import Flip from "react-reveal/Flip";
 
@@ -40,13 +39,13 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-6 scroll-mt-2">
-      <div className="lg:max-w-7xl mx-auto mt-[8vh]">
-        <h1 className="text-5xl font-bold text-center mb-[3vw] font-serif">
+    <section id="skills" className="py-12 scroll-mt-20">
+      <div className="lg:max-w-7xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 font-serif">
           Skills
         </h1>
-        <div className="px-[15vw] md:px-[4vw]">
-          <div className="grid md:grid-cols-4 grid-cols-2 gap-9">
+        <div className="px-6 md:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
             {languages.map((language, index) => (
               <Flip key={index} left cascade duration={2000}>
                 <div className="flex justify-center items-center">
@@ -54,8 +53,8 @@ const Skills = () => {
                     style={{
                       background: "black",
                       borderRadius: "15px",
-                      width: "12rem",
-                      height: "8rem",
+                      width: "11rem",
+                      height: "7rem",
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
@@ -64,14 +63,18 @@ const Skills = () => {
                       boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
                       backdropFilter: "blur(6px)",
                     }}
+                    containerStyle={{
+                      width: "12rem",
+                      height: "8rem",
+                    }}
                   >
-                    <div className="flex flex-col items-center justify-center font-serif text-white">
+                    <div className="flex flex-col items-center justify-center font-serif text-white hover:scale-105 transition-transform duration-300">
                       <img
                         src={language.icon}
                         alt={language.name}
-                        className="w-[8vh] h-[8vh] animate-float mb-2"
+                        className="w-12 h-12 md:w-16 md:h-16 animate-float mb-2"
                       />
-                      <p className="md:text-xl text-xs text-center">
+                      <p className="text-xs md:text-base text-center">
                         {language.name}
                       </p>
                     </div>
