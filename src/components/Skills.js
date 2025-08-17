@@ -41,9 +41,11 @@ const Skills = () => {
   return (
     <section id="skills" className="py-12 scroll-mt-20">
       <div className="lg:max-w-7xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 font-serif">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center  font-serif">
           Skills
         </h1>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-lg mb-10"></div>
+
         <div className="px-6 md:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
             {languages.map((language, index) => (

@@ -9,13 +9,11 @@ import LinkedInIcon from "../assets/icons/linkedin-svgrepo-com.svg";
 import Balaji from "../assets/img/balajis.png";
 
 const roles = [
-  "MERN Stack Developer",
-  "Full Stack Web Developer",
-  "Frontend Developer",
+  "Full Stack Developer",
   "React.js Developer",
   "Node.js Developer",
-  "JavaScript Developer",
 ];
+
 
 const Home = () => {
   const socialMedia = [

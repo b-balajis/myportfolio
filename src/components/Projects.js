@@ -59,9 +59,11 @@ const Projects = () => {
   return (
     <section id="projects" className="py-12 scroll-mt-8 text-white">
       <div className="font-serif mx-auto lg:max-w-7xl px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
           Personal Projects
         </h2>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-lg mb-10"></div>
+
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 font-serif">
           {projects.map((project, index) => (

@@ -5,6 +5,7 @@ import InstagramIcon from "../assets/icons/instagram.svg";
 import LeetCodeIcon from "../assets/icons/leetcode.svg";
 import LinkedInIcon from "../assets/icons/linkedin.svg";
 import TwitterIcon from "../assets/icons/x.svg";
+import VisitorCounter from "./VisitorCouter";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -88,6 +89,7 @@ const Footer = () => {
           {/* Copyright */}
           <p className="text-white text-sm sm:text-base mb-2">
             <span className="text-lg">&copy;</span> {year} Balaji Bheemavarapu
+            <VisitorCounter />
           </p>
         </div>
       </div>

@@ -32,9 +32,11 @@ const Contact = () => {
   return (
     <section id="contact" className="px-4 md:px-20 py-10 scroll-mt-8">
       <div className="font-serif mx-auto max-w-7xl">
-        <h1 className="text-center text-4xl sm:text-5xl font-bold mb-8">
+        <h1 className="text-center text-4xl sm:text-5xl font-bold ">
           Contact Me
         </h1>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-lg mb-8"></div>
+
 
         {/* Container for form + details */}
         <div className="flex flex-col md:flex-row md:space-x-6 gap-8">

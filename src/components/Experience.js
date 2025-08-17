@@ -97,6 +97,8 @@ export default function AlternatingTimeline() {
         <p className="text-center text-3xl sm:text-4xl md:text-5xl font-bold">
           Professional Experience
         </p>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-lg"></div>
+
         <div>
           <Box p={4}>
             <Timeline position={isMobile ? "right" : "alternate"}>

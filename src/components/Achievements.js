@@ -111,7 +111,9 @@ export default function Achievements() {
   return (
     <section id="achievements" className="px-4 text-white py-10 scroll-mt-8">
       <div className="max-w-6xl mx-auto text-center font-serif">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Achievements</h2>
+        <h2 className="text-4xl md:text-5xl font-bold ">Achievements</h2>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 mb-4 rounded-lg"></div>
+
         <div className="relative">
           {/* Left Button */}
           <button
