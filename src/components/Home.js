@@ -14,7 +14,6 @@ const roles = [
   "Node.js Developer",
 ];
 
-
 const Home = () => {
   const socialMedia = [
     {
@@ -121,15 +120,12 @@ const Home = () => {
               </h2>
 
               <p className="text-sm md:text-lg leading-relaxed">
-                Full Stack Developer with 3+ years (2.2 years full-time)
-                of experience in scalable MERN stack development.
-                Skilled in REST/GraphQL APIs, TypeScript, and
-                DevOps with Docker, Kubernetes, and Azure.
-                Exploring LLM integration and AI-assisted workflows
-                (LangChain, Copilot, GenAI). Familiar with designing
-                microservice architectures and scalable system
-                design patterns.
-
+                Full Stack Developer with 3+ years of hands-on experience in
+                building scalable MERN stack development. Skilled in
+                REST/GraphQL APIs, TypeScript, and DevOps with Docker,
+                Kubernetes, and Azure. Exploring LLM integration and AI-assisted
+                workflows (LangChain, Copilot, GenAI). Familiar with designing
+                microservice architectures and scalable system design patterns.
               </p>
             </div>
 
