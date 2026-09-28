@@ -234,7 +234,7 @@ const Home = () => {
             <img
               src={BalajiProfessionalProfile}
               alt="Balaji Bheemavarapu Profile"
-              className="w-72 h-96 object-cover rounded-full p-1 hover:scale-105 transition-transform duration-300"
+              className="w-80 object-cover rounded-full p-1 hover:scale-105 transition-transform duration-300"
             />
           </div>
         </div>
