@@ -1,12 +1,9 @@
-import Card from "react-animated-3d-card";
 import Flip from "react-reveal/Flip";
 
 import Azure from "../assets/icons/azure-devops-svgrepo-com.svg";
 import Bootstrap from "../assets/icons/bootstrap.svg";
-import Firebase from "../assets/icons/firebase.svg";
 import Git from "../assets/icons/git.svg";
 import GraphQL from "../assets/icons/graphql-icon.svg";
-import Java from "../assets/icons/java.svg";
 import JavaScript from "../assets/icons/javascript.svg";
 import Jest from "../assets/icons/jest-js-icon.svg";
 import NodeJS from "../assets/icons/nodejs-1.svg";
@@ -19,72 +16,278 @@ import Express from "../assets/img/express.png";
 import MUI from "../assets/img/mui.png";
 
 const Skills = () => {
-  const languages = [
-    { name: "JavaScript", icon: JavaScript },
-    { name: "TypeScript", icon: TypeScript },
-    { name: "React.Js", icon: ReactJS },
-    { name: "Redux (Thunk)", icon: Redux },
-    { name: "Jest", icon: Jest },
-    { name: "Tailwind CSS", icon: TailwindCSS },
-    { name: "Material UI", icon: MUI },
-    { name: "Bootstrap", icon: Bootstrap },
-    { name: "Node.Js", icon: NodeJS },
-    { name: "Express.Js", icon: Express },
-    { name: "GraphQL", icon: GraphQL },
-    { name: "Azure DevOps", icon: Azure },
-    { name: "Python", icon: Python },
-    { name: "Java (Basics)", icon: Java },
-    { name: "Git", icon: Git },
-    { name: "Firebase", icon: Firebase },
+  const skillCategories = [
+    {
+      title: "Languages",
+      shortTitle: "LANGUAGES",
+      skills: [
+        { name: "JavaScript", icon: JavaScript },
+        { name: "TypeScript", icon: TypeScript },
+        { name: "Python", icon: Python },
+      ],
+    },
+
+    {
+      title: "Frontend",
+      shortTitle: "FRONTEND",
+      skills: [
+        { name: "React", icon: ReactJS },
+        { name: "Next.js", short: "N" },
+        { name: "Redux", icon: Redux },
+        { name: "Micro Frontends", short: "MF" },
+        { name: "Tailwind CSS", icon: TailwindCSS },
+        { name: "Material UI", icon: MUI },
+        { name: "Bootstrap", icon: Bootstrap },
+      ],
+    },
+
+    {
+      title: "Backend",
+      shortTitle: "BACKEND",
+      skills: [
+        { name: "Node.js", icon: NodeJS },
+        { name: "Express.js", icon: Express },
+        { name: "REST APIs", short: "API" },
+        { name: "Microservices", short: "MS" },
+        { name: "Redis", short: "R" },
+        { name: "MongoDB", short: "MDB" },
+        { name: "MySQL", short: "SQL" },
+        { name: "GraphQL", icon: GraphQL },
+      ],
+    },
+
+    {
+      title: "Cloud & DevOps",
+      shortTitle: "CLOUD & DEVOPS",
+      skills: [
+        { name: "Azure", icon: Azure },
+        { name: "Azure API Management", short: "APIM" },
+        { name: "Docker", short: "D" },
+        { name: "Azure DevOps", icon: Azure },
+        { name: "GitHub Actions", short: "GH" },
+        { name: "CI/CD", short: "CI" },
+        { name: "Webpack", short: "W" },
+        { name: "Git", icon: Git },
+      ],
+    },
+
+    {
+      title: "Security & Testing",
+      shortTitle: "SECURITY & TESTING",
+      skills: [
+        { name: "OAuth 2.0", short: "OA" },
+        { name: "JWT", short: "JWT" },
+        { name: "Authentication", short: "AUTH" },
+        { name: "Authorization", short: "AZ" },
+        { name: "RBAC", short: "RBAC" },
+        { name: "Jest", icon: Jest },
+        { name: "React Testing Library", short: "RTL" },
+        { name: "Dynatrace", short: "D" },
+        { name: "SonarQube", short: "SQ" },
+      ],
+    },
+
+    {
+      title: "AI / GenAI",
+      shortTitle: "AI / GENAI",
+      skills: [
+        { name: "LLM Integration", short: "LLM" },
+        { name: "GPT-4", short: "GPT" },
+        { name: "OpenAI API", short: "AI" },
+        { name: "Gemini", short: "G" },
+        { name: "Claude", short: "C" },
+        { name: "Prompt Engineering", short: "PE" },
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="py-12 scroll-mt-20">
-      <div className="lg:max-w-7xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center  font-serif">
-          Skills
-        </h1>
-        <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-lg mb-10"></div>
+    <section id="skills" className="py-2 scroll-mt-20 text-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-10 md:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif">
+            Technical Skills
+          </h1>
 
-        <div className="px-6 md:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-            {languages.map((language, index) => (
-              <Flip key={index} left cascade duration={2000}>
-                <div className="flex justify-center items-center">
-                  <Card
-                    style={{
-                      background: "black",
-                      borderRadius: "15px",
-                      width: "11rem",
-                      height: "7rem",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      cursor: "pointer",
-                      transition: "transform 0.3s",
-                      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-                      backdropFilter: "blur(6px)",
-                    }}
-                    containerStyle={{
-                      width: "12rem",
-                      height: "8rem",
-                    }}
-                  >
-                    <div className="flex flex-col items-center justify-center font-serif text-white hover:scale-105 transition-transform duration-300">
-                      <img
-                        src={language.icon}
-                        alt={language.name}
-                        className="w-12 h-12 md:w-16 md:h-16 animate-float mb-2"
-                      />
-                      <p className="text-xs md:text-base text-center">
-                        {language.name}
-                      </p>
-                    </div>
-                  </Card>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full" />
+
+          <p className="max-w-2xl mx-auto mt-5 text-sm md:text-base text-gray-400 leading-relaxed">
+            Technologies and tools I use to build scalable, secure and
+            production-ready applications.
+          </p>
+        </div>
+
+        <div className="space-y-8 md:space-y-10">
+          {skillCategories.map((category) => (
+            <div key={category.title}>
+              {/* Category Header */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="w-1.5 h-5 bg-blue-600 rounded-full" />
+
+                  <h2 className="text-sm md:text-base font-semibold tracking-wider text-gray-200 uppercase">
+                    {category.shortTitle}
+                  </h2>
                 </div>
-              </Flip>
-            ))}
-          </div>
+
+                <div className="h-px bg-gradient-to-r from-gray-700 to-transparent flex-1" />
+              </div>
+
+              {/* Skill Grid */}
+              <div
+                className="
+                  grid
+                  grid-cols-2
+                  sm:grid-cols-3
+                  md:grid-cols-4
+                  lg:grid-cols-5
+                  xl:grid-cols-6
+                  gap-3
+                  md:gap-4
+                "
+              >
+                {category.skills.map((skill, index) => (
+                  <Flip key={skill.name} left cascade duration={800}>
+                    <div
+                      className="
+                        group
+                        relative
+                        h-[92px]
+                        md:h-[100px]
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/[0.025]
+                        backdrop-blur-md
+                        overflow-hidden
+                        transition-all
+                        duration-300
+                        hover:-translate-y-1
+                        hover:border-blue-500/50
+                        hover:bg-blue-500/[0.06]
+                        hover:shadow-[0_8px_30px_rgba(37,99,235,0.12)]
+                      "
+                    >
+                      {/* Subtle blue glow */}
+                      <div
+                        className="
+                          absolute
+                          -right-6
+                          -top-6
+                          h-16
+                          w-16
+                          rounded-full
+                          bg-blue-500/10
+                          blur-2xl
+                          opacity-0
+                          group-hover:opacity-100
+                          transition-opacity
+                          duration-300
+                        "
+                      />
+
+                      <div className="relative h-full flex flex-col items-center justify-center">
+                        {/* Icon */}
+                        <div
+                          className="
+                            h-10
+                            w-10
+                            md:h-11
+                            md:w-11
+                            flex
+                            items-center
+                            justify-center
+                            mb-2
+                            rounded-lg
+                            bg-black/50
+                            border
+                            border-white/5
+                            group-hover:border-blue-500/30
+                            transition-colors
+                            duration-300
+                          "
+                        >
+                          {skill.icon ? (
+                            <img
+                              src={skill.icon}
+                              alt={skill.name}
+                              className="
+                                h-7
+                                w-7
+                                md:h-8
+                                md:w-8
+                                object-contain
+                                transition-transform
+                                duration-300
+                                group-hover:scale-110
+                              "
+                            />
+                          ) : (
+                            <span
+                              className="
+                                text-[10px]
+                                md:text-xs
+                                font-bold
+                                tracking-tight
+                                text-blue-400
+                                group-hover:text-blue-300
+                              "
+                            >
+                              {skill.short}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Skill Name */}
+                        <p
+                          className="
+                            text-[10px]
+                            sm:text-xs
+                            md:text-[13px]
+                            text-center
+                            leading-tight
+                            px-1
+                            text-gray-300
+                            group-hover:text-white
+                            transition-colors
+                            duration-300
+                          "
+                        >
+                          {skill.name}
+                        </p>
+                      </div>
+                    </div>
+                  </Flip>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* =========================
+            SKILL SUMMARY
+        ========================== */}
+
+        <div
+          className="
+            mt-10
+            md:mt-12
+            rounded-2xl
+            border
+            border-blue-500/20
+            bg-blue-500/[0.035]
+            px-5
+            py-5
+            md:px-8
+            md:py-6
+            text-center
+          "
+        >
+          <p className="text-xs md:text-sm text-gray-400">
+            <span className="text-blue-400 font-semibold">Core Focus:</span>{" "}
+            Full Stack Engineering · Backend Development · Scalable APIs ·
+            Microservices · AI / GenAI
+          </p>
         </div>
       </div>
     </section>

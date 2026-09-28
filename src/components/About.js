@@ -25,39 +25,50 @@ const About = () => {
 
           {/* Content */}
           <Slide right>
-            <div className="w-full md:w-2/3 md:ml-6 lg:ml-9 text-center md:text-left">
-              <p className="text-base sm:text-lg leading-relaxed mt-6 md:mt-0">
-                I'm a Full Stack Developer with 3.1+ years of hands-on
-                experience building scalable, user-focused web applications
-                using the MERN stack (MongoDB, Express.js, React.js, Node.js).
-                My passion lies in turning complex ideas into high-performing
-                solutions, with a focus on clean code, intuitive UI, and
-                efficient backend logic.
+            <div className="w-full md:w-2/3 md:ml-6 lg:ml-9 text-center md:text-left text-base sm:text-lg leading-relaxed mt-6 md:mt-0">
+              <p>
+                I’m a Full Stack Software Engineer with 4+ years of professional
+                experience developing and modernizing enterprise applications.
               </p>
-              <p className="text-base sm:text-lg mt-4 leading-relaxed">
-                At <strong>Tata Consultancy Services (TCS)</strong>, I hold the
-                designation of <strong>Systems Engineer</strong>, working in the
-                role of a Full Stack Developer. I contribute to fintech
-                platforms that automate mortgage product selection —
-                transforming static workflows into dynamic, microservice-based
-                systems that have improved speed and reduced manual efforts by
-                95%.
+              <p>
+                My core expertise is across{" "}
+                <strong className="text-blue-600 dark:text-blue-400">
+                  React, Next.js, Node.js, TypeScript, REST APIs,
+                  micro-frontends and microservices{" "}
+                </strong>{" "}
+                . I enjoy working across the full application lifecycle—from
+                designing and integrating APIs to building responsive user
+                interfaces, improving performance, writing automated tests and
+                supporting production deployments.
               </p>
-              <p className="text-base sm:text-lg mt-4 leading-relaxed">
-                I’ve worked across the stack — deploying with Azure DevOps,
-                managing APIs via Azure APIM, and ensuring code quality through
-                CI/CD, unit testing, and performance monitoring tools.
+              <p>
+                {" "}
+                At TDCX Digilab, I contributed to an{" "}
+                <strong className="text-slate-900 dark:text-white">
+                  AI-powered Agent Assist platform{" "}
+                </strong>
+                , working across React/Next.js, Node.js, TypeScript, Chrome
+                Extension workflows, REST APIs, Redis and AI-enabled
+                functionality.{" "}
               </p>
-              <p className="text-base sm:text-lg mt-4 leading-relaxed">
-                Currently, I’m exploring LLM integration and AI-assisted
-                workflows, including{" "}
-                <strong>LangChain, Copilot, and GenAI</strong>, while designing
-                microservice architectures and scalable system design patterns.
+              <p>
+                {" "}
+                Previously at TCS, I worked on{" "}
+                <strong className="text-blue-600 dark:text-blue-400">
+                  high-traffic UK banking and mortgage applications{" "}
+                </strong>
+                , contributing to micro-frontends, microservices, API
+                development, security, performance optimization, automated
+                deployments and production troubleshooting.{" "}
               </p>
-
-              <p className="text-base sm:text-lg mt-4 leading-relaxed">
-                I’m always open to learning new technologies and collaborating
-                on innovative projects that solve real-world problems.
+              <p>
+                {" "}
+                I’m particularly interested in{" "}
+                <strong className="text-blue-600 dark:text-blue-400">
+                  backend engineering, scalable systems, AI/GenAI integration
+                  and building products that solve real-world problems{" "}
+                </strong>
+                .
               </p>
             </div>
           </Slide>
