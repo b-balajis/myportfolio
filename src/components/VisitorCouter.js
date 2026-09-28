@@ -9,12 +9,15 @@ const VISITOR_COOLDOWN = 24 * 60 * 60 * 1000; // 24 hours
 
 export default function VisitorCounter() {
   const [visits, setVisits] = useState(null);
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const [displayCount, setDisplayCount] = useState(0);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     const hostname = window.location.hostname;
 
-    // Only count visitors on production
     const isProduction =
       hostname === "bbalajis.com" || hostname === "www.bbalajis.com";
 
@@ -48,7 +51,7 @@ export default function VisitorCounter() {
           return;
         }
 
-        // New visitor / visitor after 24 hours
+        // New visitor
         const newCount = await runTransaction(db, async (transaction) => {
           const snapshot = await transaction.get(counterRef);
 
@@ -65,12 +68,10 @@ export default function VisitorCounter() {
 
         setVisits(newCount);
 
-        // Remember this browser for 24 hours
         localStorage.setItem(VISITOR_KEY, Date.now().toString());
       } catch (error) {
         console.error("Visitor counter error:", error);
 
-        // Don't leave "Loading..." forever
         setVisits(null);
       }
     };
@@ -78,17 +79,79 @@ export default function VisitorCounter() {
     updateVisitorCount();
   }, []);
 
+  /*
+   * Count-up animation
+   * Example:
+   * 0 → 616
+   */
+  useEffect(() => {
+    if (visits === null || !inView) {
+      return;
+    }
+
+    const target = Number(visits);
+
+    if (!Number.isFinite(target)) {
+      return;
+    }
+
+    let startTime;
+    let animationFrame;
+
+    const duration = 1800;
+
+    const animate = (currentTime) => {
+      if (!startTime) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease-out cubic
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      const currentValue = Math.floor(easedProgress * target);
+
+      setDisplayCount(currentValue);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        setDisplayCount(target);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [visits, inView]);
+
   return (
     <div ref={ref} className="flex items-center justify-center gap-2">
       <span>Visitors:</span>
 
       <motion.span
-        initial={{ opacity: 0, y: 8 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="font-semibold text-blue-200"
+        initial={{
+          opacity: 0,
+          y: 8,
+        }}
+        animate={
+          inView
+            ? {
+                opacity: 1,
+                y: 0,
+              }
+            : {}
+        }
+        transition={{
+          duration: 0.5,
+        }}
+        className="font-semibold text-blue-200 tabular-nums"
       >
-        {visits !== null ? visits : "Loading..."}
+        {visits !== null ? displayCount : "—"}
       </motion.span>
     </div>
   );
